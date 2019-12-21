@@ -61,13 +61,13 @@ module.exports = merge(common, {
                 use: ['html-loader']
             },
             {
-                test: /\.(jpe?g|svg|gif|png)/,
+                test: /\.(jpeg|jpg|svg|gif|png)/,
                 use: [
                     {
                         loader: 'file-loader',
                         options: {
                             publicPath: path.resolve(__dirname, '/assets/img'),
-                            ouputPath: 'assets/img',
+                            outputPath: 'assets/img',
                             name: '[name].[ext]',
                             esModule: false
                         }
