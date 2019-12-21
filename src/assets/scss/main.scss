@@ -1,6 +1,59 @@
 @import './normalize';
 @import './colors';
+@import './elements';
 
-body {
-    background: green;
+.menu-section, .bar-section {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    background: white;
+    height: 50vh;
+    .details {
+        flex: 1 0;
+        min-width: 50%;
+        padding: 4rem;
+    }
+
+    .image {
+        flex: 1 0;
+        min-width: 50%;
+        height: inherit;
+        background: url('../img/curry-and-rice.jpg') center/cover no-repeat;
+    }
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.service {
+    flex: 1 0 auto;
+    min-width: 28rem;
+    width: 50%;
+    padding: 2rem;
+    background-color: white;
+    position: relative;
+    height: 50vh;
+}
+
+.service-image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    content: '';
+}
+.service-image[data-value="buffet"] {
+    background: url('../img/indian-buffet-service.jpg') center/cover no-repeat;
+}
+.service-image[data-value="takeout"] {
+    background: url('../img/indian-takeout-service.jpg') center/cover no-repeat;
+}
+.service-image[data-value="catering"] {
+    background: url('../img/indian-catering-service.jpg') center/cover no-repeat;
+}
+.service-image[data-value="alacarte"] {
+    background: url('../img/indian-a-la-carte-service.jpeg') center/cover no-repeat;
 }
