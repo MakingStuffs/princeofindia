@@ -3,11 +3,16 @@ const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractCssChunksPlugin = require('extract-css-chunks-webpack-plugin');
 const path = require('path');
+const webpack = require('webpack');
 const common = require('./webpack.common');
 const postcssPresetenv = require('postcss-preset-env');
 
 module.exports = merge(common, {
     mode: 'development',
+    entry: [
+        'webpack-hot-middleware/client'
+    ],
+    devtool:'sourcemap',
     module: {
         rules: [
             {
@@ -72,6 +77,7 @@ module.exports = merge(common, {
         ]
     },
     plugins: [
+        new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             template: './src/views/pages/index.html'
         }),
