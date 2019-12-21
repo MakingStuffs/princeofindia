@@ -1,0 +1,28 @@
+<?php
+    $locationJson = file_get_contents('./assets/json/branches.json');
+    $locationDetails = json_decode($locationJson);
+?>
+<div class="location-section">
+    <div class="location-container">
+        <?php
+            foreach($locationDetails->branches as $branch) {
+        ?>
+            <div class="branch-tile">
+                <h3 class="india-font">
+                    <?php echo $branch->city; ?>
+                </h3>
+                <p>
+                    <?php echo $branch->address; ?>
+                </p>
+                <p>
+                    <?php echo $branch->phone; ?>
+                </p>
+                <a href="<?php echo $branch->website; ?>" rel="noopener noreferrer" title="Prince of India in <?php echo $branch->city; ?>" class="button">
+                    View Website
+                </a>
+            </div>
+        <?php  
+            };
+        ?>
+    </div>
+</div>

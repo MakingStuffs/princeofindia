@@ -1,0 +1,49 @@
+{
+  "navLinks": [
+    {
+      "title": "Homepage intro section",
+      "href": "/",
+      "text": "Home"
+    },
+    {
+      "title": "Homepage services section",
+      "href": "/#services",
+      "text": "Services"
+    },
+    {
+      "title": "See Our Menu",
+      "href": "/menu",
+      "text": "Menu"
+    },
+    {
+      "title": "Takeout & Delivery",
+      "href": "/takeout",
+      "text": "Takeout & Delivery"
+    },
+    {
+      "title": "Book a Table",
+      "href": "/booking",
+      "text": "Reservations"
+    },
+    {
+      "title": "Special offers section",
+      "href": "/offers",
+      "text": "Offers"
+    },
+    {
+      "title": "About Indian Spices",
+      "href": "/spices",
+      "text": "Spices"
+    },
+    {
+      "title": "About Us",
+      "href": "/about",
+      "text": "About"
+    },
+    {
+      "title": "Contact Us",
+      "href": "/contact",
+      "text": "Contact"
+    }
+  ]
+}

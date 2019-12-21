@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="description" content="We are a traditional, family run, Indian restaurant which serves curries from north and south India. We have a fully licensed bar and provide table service, takeout, catering and a lunch buffet.">
+    <meta name="keywords" content="traditional curry, indian food, indian takeout, indian restaurant burlington, curry in burlington, traditional, indian, restaurant, takeout, india">
+    <meta name="twitter:title" content="Prince of India | Traditional Indian Cuisine | Contact Us">
+    <meta name="twitter:description" content="We are a traditional, family run, Indian restaurant which serves curries from north and south India. We have a fully licensed bar and provide table service, takeout, catering and a lunch buffet.">
+    <meta property="og:title" content="Prince of India | Traditional Indian Cuisine | Contact Us">
+    <meta property="og:url" content="https://princeofindia.restaurant/contact">
+    <meta property="og:description" content="We are a traditional, family run, Indian restaurant which serves curries from north and south India. We have a fully licensed bar and provide table service, takeout, catering and a lunch buffet.">
+    <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+    <script>
+        $loadJS(["./assets/js/ES6/headerScripts-ES6.js", "./assets/js/ES6/contact-ES6.js"],["./assets/js/ES5/headerScripts-ES5.js", "./assets/js/ES5/contact-ES5.js"])
+        function $loadJS(ES6, ES5) {
+            if( 'noModule' in document.createElement('script')) $useJS = ES6, $defer = true
+            else $useJS = ES5, $type = '', $defer = 'defer'
+            for( var i = 0; i < $useJS.length; i++ ) {
+                elem = document.createElement('script');
+                elem.src = $useJS[i];
+                elem.defer = $defer;
+                document.head.appendChild(elem);
+            }
+        }
+    </script>
+    <link rel="icon" href="./assets/img/favicon.png">
+    <link rel="stylesheet" href="./assets/fa/css/all.css">
+    <link rel="stylesheet" href="./assets/css/princeofindia.css">
+    <title>Prince of India | Traditional Indian Cuisine | Contact Us</title>
+  </head>
+  <body>
+    <main id="main">
+      <section id="contact" class="no-pad">
+        <div class="txt-center pad-2rem bg-red txt-white btm-triangle-red pos-rel">
+          <h2>Contact Us</h2>
+          <p class="txt-2rem">If you would like to get in contact with us for any reason at all please use the contact form below. Alternatively, give us a call on: 905-333-1331</p>
+        </div>
+        <div class="flex flex-center form-class">
+          <form class="bg-trans-black pad-4rem" id="contactForm" method="post" action="./assets/php/contact.php">
+            <div class="loader kill hide"></div>
+            <div id="form-response" class="kill hide bg-white">
+            </div>
+            <div id="formFields">
+              <div id="userDetails" class="txt-2rem">
+                <div class="w-50p flex-column margin-right-1rem">
+                  <label for="firstName">
+                    First Name
+                  </label>
+                    <input id="firstName" name="first-name" type="text" class="contact-input" required />
+                  <label for="lastName">
+                    Last Name
+                  </label>
+                    <input id="lastName" name="last-name" type="text" class="contact-input" required />
+                </div>
+                <div class="w-50p margin-bottom-1rem flex-column">
+                  <label for="phone">Phone</label>
+                  <input
+                    id="phone"
+                    name="phone" 
+                    type="tel" 
+                    class="contact-input" 
+                    pattern="[0-9]{10,11}|[(]?[0-9]{3}[)]?[\s.-]?[(]?[0-9]{3}[)]?[\s.-]?[(]?[0-9]{4}[)]?"
+                    placeholder="123-456-7890"
+                    required 
+                  />
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" class="contact-input" required />
+                </div>
+              </div>
+              <div id="queryDetails" class="txt-2rem flex-row">
+                <div id='selectCont' class="w-100p margin-bottom-1rem">
+                  <label for="subject">
+                    Subject
+                    <select id="subject" class="" name="subject">
+                      <option value="0">Select Subject</option>
+                      <option value="general">General Enquiry</option>
+                      <option value="feedback">Feedback</option>
+                      <option value="booking">Booking Change</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+              <div id="queryContent" class="txt-2rem flex-column">
+                <label for="message">Message
+                </label>
+                  <textarea id="message" name="message" class="w-100p contact-input margin-bottom-none" required></textarea>
+              </div>
+              <input type="submit" name="submit" value="Submit" class="round-border flex-center w-100p margin-top-1rem"/>
+              <div class="flex-row">
+                <label class="kill" for="mailer">Mailer</label>
+                <p class="txt-white txt-2rem flex-column flex-center pad-1rem">Would like to join our mailing list?</p>
+                <input id="mailer" name="mailList" type="checkbox" />
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

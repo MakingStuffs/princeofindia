@@ -1,0 +1,25 @@
+<?php 
+// Get the nav bar information
+$navJson = file_get_contents('./assets/json/nav.json');
+// Decode the file to use in PHP
+$navData = json_decode($navJson, true);
+?>
+<nav id="topNav">
+    <div id="logo" class="nav-logo">
+    <a href="/" class="india-font">Prince of India</a>
+    </div>
+    <div class="nav-icon">
+        <i class="fas fa-bars"></i>
+    </div>
+    <ul id="ulNav">
+        <?php 
+            // Cycle the json
+            foreach($navData['navLinks'] as $link) {
+                echo '<li class="nav-link"><a href="' . $link['href'] . '" title="' . $link['title'] . '">'
+                . $link['text']
+                . '</a>'
+                . '</li>';
+            }
+        ?>
+    </ul>
+</nav>

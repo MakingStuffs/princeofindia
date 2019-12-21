@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="description" content="Indian spices have been known to have many uses and benefits for thousands of years. Have a read about some of the more popular spices we use.">
+    <meta name="keywords" content="indian spices, indian curry spices, indian food, food, indian, curry spices, spices">
+    <meta name="twitter:title" content="Prince of India | Traditional Indian Cuisine | Indian Spices">
+    <meta name="twitter:description" content="Indian spices have been known to have many uses and benefits for thousands of years. Have a read about some of the more popular spices we use.">
+    <meta property="og:title" content="Prince of India | Traditional Indian Cuisine | Indian Spices">
+    <meta property="og:url" content="https://princeofindia.restaurant/spices">
+    <meta property="og:description" content="Indian spices have been known to have many uses and benefits for thousands of years. Have a read about some of the more popular spices we use.">
+    <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+    <script>
+        $loadJS(["./assets/js/ES6/headerScripts-ES6.js", "./assets/js/ES6/spices-ES6.js"],["./assets/js/ES5/headerScripts-ES5.js", "./assets/js/ES5/spices-ES5.js"])
+        function $loadJS(ES6, ES5) {
+            if( 'noModule' in document.createElement('script')) $useJS = ES6, $defer = true
+            else $useJS = ES5, $type = '', $defer = 'defer'
+            for( var i = 0; i < $useJS.length; i++ ) {
+                elem = document.createElement('script');
+                elem.src = $useJS[i];
+                elem.defer = $defer;
+                document.head.appendChild(elem);
+            }
+        }
+    </script>
+    <link rel="icon" href="./assets/img/favicon.png">
+    <link rel="stylesheet" href="./assets/fa/css/all.css">
+    <link rel="stylesheet" href="./assets/css/princeofindia.css">
+    <title>Prince of India | Traditional Indian Cuisine | Indian Spices</title>
+  </head>
+  <body>
+    <main id="main">
+      <section id="offers" class="no-pad">
+        <div class="txt-center pad-2rem bg-red txt-white btm-triangle-red pos-rel">
+          <h2>Indian Spices</h2>
+          <p class="txt-2rem">Have you ever wondered what makes Indian food so uniquely flavoursome? Have a read about the secret to all Indian food: spices!</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

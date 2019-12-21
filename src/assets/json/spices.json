@@ -1,0 +1,186 @@
+{
+    "spices": [
+        {
+            "name": "Cinnamon",
+            "indianName": "Dalchini",
+            "description": "Cinnamon is a spice obtained from the inner bark of several tree species. Cinnamon is used mainly as an aromatic condiment and flavouring additive in a wide variety of cuisines, sweet and savoury dishes, breakfast cereals, snackfoods, tea and traditional foods. The aroma and flavour of cinnamon derive, in part, from its essential oil. The term 'cinnamon' also is used to describe its mid-brown colour. Cinnamon is the name for several species of trees and the commercial spice products that some of them produce",
+            "link": "https://en.wikipedia.org/wiki/Cinnamon",
+            "image": "/assets/img/cinnamon-slide.jpg",
+            "smellTaste": [
+                "Sweet",
+                "Aromatic",
+                "Spicy"
+            ],
+            "type": [
+              "Hard",
+              "Powdered"
+            ],
+            "benefits": [
+                "Blood Sugar",
+                "Heart Disease",
+                "Anti-inflammatory",
+                "Antioxidants"           
+              ]
+        },
+        {
+            "name": "Cardamon",
+            "indianName": "Elaichi",
+            "description": "In Asia, both types of cardamom are widely used in both sweet and savory dishes, particularly in the south. Both are frequent components in spice mixes, such as Indian and Nepali masalas and Thai curry pastes. Green cardamom is often used in traditional Indian sweets and in masala chai (spiced tea). Both are also often used as a garnish in basmati rice and other dishes. Individual seeds are sometimes chewed and used in much the same way as chewing gum.",
+            "link": "https://en.wikipedia.org/wiki/Cardamom",
+            "image": "/assets/img/cardamon-slide.jpg",
+            "smellTaste": [
+                "Sweet",
+                "Aromatic",
+                "Menthol"
+            ],
+            "type": [
+              "Hard",
+              "Powdered"
+            ],
+            "benefits": [
+                "Blood Pressure",
+                "Heart Disease",
+                "Anti-inflammatory",
+                "Antioxidants",
+                "Digestion",
+                "Antibacterial"
+            ]
+        },
+        {
+            "name": "Cumin",
+            "indianName": "Jeera",
+            "description": "Cumin seed is used as a spice for its distinctive flavour and aroma. Cumin can be found in some cheeses, such as Leyden cheese, and in some traditional breads from France. Cumin can be an ingredient in chili powder (often Tex-Mex or Mexican-style), and is found in achiote blends, adobos, sofrito, garam masala, curry powder, bahaarat, and is used to flavor numerous commercial food products.[3] In South Asian cooking, it is often combined with coriander seeds in a powdered mixture called dhana jeera.",
+            "image": "/assets/img/cumin-slide.jpeg",
+            "link": "https://en.wikipedia.org/wiki/Cumin",
+            "smellTaste": [
+                "Warm",
+                "Earthy",
+                "Smokey"
+            ],
+            "type": [
+              "Hard",
+              "Powdered"
+            ],
+            "benefits": [
+                "Digestion",
+                "Iron",
+                "Diabetes",
+                "Cholesterol"
+            ]
+        },
+        {
+            "name": "Tumeric",
+            "indianName": "Haldi",
+            "description": "Turmeric is one of the key ingredients in many Asian dishes, imparting a mustard-like, earthy aroma and pungent, slightly bitter flavor to foods.[5][6] It is used mostly in savory dishes, but also is used in some sweet dishes, such as the cake sfouf. In India, turmeric leaf is used to prepare special sweet dishes, patoleo, by layering rice flour and coconut-jaggery mixture on the leaf, then closing and steaming it in a special utensil (chondrõ). Most turmeric is used in the form of rhizome powder to impart a golden yellow color.",
+            "link": "https://en.wikipedia.org/wiki/Tumeric",
+            "image": "/assets/img/tumeric-slide.jpg",
+            "smellTaste": [
+                "Earthy",
+                "Bitter",
+                "Peppery"
+            ],
+            "type": [
+              "Fresh",
+              "Powdered"
+            ],
+            "benefits": [
+                "Heart Disease",
+                "Antioxidants",
+                "Anti-inflammatory"
+            ]
+        },
+        {
+            "name": "Fenugreek",
+            "indianName": "Methi",
+            "description": "Fresh fenugreek leaves are an ingredient in some curries, such as with potatoes in cuisines of the Indian subcontinent to make \"aloo methi\" (\"potato fenugreek\") curry. Sprouted seeds and fenugreek greens are used in salads. When harvested as greens, fenugreek is known as samudra methi in Maharashtra, especially in and around Mumbai, where it is often grown in sandy tracts near the sea, hence the name samudra, \"ocean\" in Sanskrit. Samudra methi is also grown in dry river beds in the Gangetic plains.",
+            "link": "https://en.wikipedia.org/wiki/Fenugreek",
+            "image": "/assets/img/fenugreek-slide.jpg",
+            "smellTaste": [
+                "Spicey",
+                "Sweet",
+                "Earthy"
+            ],
+            "type": [
+              "Hard",
+              "Fresh",
+              "Powdered"
+            ],
+            "benefits": [
+                "Digestion",
+                "Cholesterol",
+                "Menstruation",
+                "Liver",
+                "Kidney"
+            ]
+        },
+        {
+            "name": "Pepper",
+            "indianName": "Mirch",
+            "description": "Pepper is native to South Asia and Southeast Asia, and has been known to Indian cooking since at least 2000 BCE. J. Innes Miller notes that while pepper was grown in southern Thailand and in Malaysia, its most important source was India, particularly the Chera dynasty (Tamil dynasty) Malabar Coast, in what is now the state of Kerala. The lost ancient port city of Muziris in Kerala, famous for exporting black pepper and various other spices, gets mentioned in a number of classical historical sources.",
+            "link": "https://en.wikipedia.org/wiki/Black_pepper", 
+            "image": "/assets/img/pepper-slide.jpg",
+            "smellTaste": [
+                "Spicy",
+                "Hot",
+                "Earthy"
+            ],
+            "type": [
+              "Hard",
+              "Powdered"
+            ],
+            "benefits": [
+                "Antioxidants",
+                "Anti-inflammatory",
+                "Blood Sugar",
+                "Cholesterol"
+            ]
+        },
+       { 
+          "name":"Mustard",
+          "indianName":"Sarson",
+          "description":"These mustard seeds are known in Hindi, Urdu, and Punjabi as sarson (Indian colza, Brassica rapa subsp. trilocularis, syn. Brassica campestris var. sarson),[1] in Bengali as shorshe. These are used as a spice in Pakistan, Northern India, Nepal, and Bangladesh. The seeds are usually roasted until they pop. They are also planted to grow saag (greens) which are stir-fried and eaten as a vegetable preparation, called sarson ka saag in Urdu and Hindi (sarron da saag in Punjabi).",
+          "link":"https://en.wikipedia.org/wiki/Mustard_seed",
+          "image":"/assets/img/mustard-slide.jpeg",
+          "smellTaste": [
+            "Spicy",
+            "Earthy",
+            "Musky"
+          ],
+          "type": [
+            "Hard",
+            "Powdered",
+            "Fresh"
+          ],
+          "benefits": [ 
+            "Cholesterol",
+            "Asthma",
+            "Respiratory",
+            "Cardiovascular"
+          ]
+      },
+      { 
+         "name":"Coriander",
+         "indianName":"Dhaniya",
+         "description":"Coriander is an annual herb which is also known as Chinese parsley, and in North America the stems and leaves are usually called cilantro. All parts of the plant are edible, but the fresh leaves and the dried seeds (as a spice) are the parts most traditionally used in cooking. Most people perceive the taste of coriander leaves as a tart, lemon/lime taste, but a smaller group of about 3–21% of people tested think the leaves taste like dish soap, linked to a gene which detects some specific aldehydes that are also used as odorant substances in many soaps and detergents.",
+         "link":"https://en.wikipedia.org/wiki/Coriander",
+         "image":"/assets/img/coriander-slide.jpg",
+         "smellTaste": [
+           "Zesty",
+           "Fresh",
+           "Lemony"
+         ],
+         "type": [
+           "Hard",
+           "Powdered",
+           "Fresh"
+         ],
+         "benefits": [ 
+           "Skin",
+           "Cholesterol",
+           "Blood Pressure",
+           "Mouth Ulcers",
+           "Digestion"
+         ]
+     }
+    ] 
+}

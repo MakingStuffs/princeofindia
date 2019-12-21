@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="description" content="Here you can find the takeout menu for our traditional indian restaurant in Burlington, Ontario. It features a wide selection of our Indian curries and sides.">
+    <meta name="keywords" content="indian takeout menu, indian takeout, indian food to takeout, food, indian, burlington, indian food burlington, indian takeout burlington, takeout">
+    <meta name="twitter:title" content="Prince of India | Traditional Indian Cuisine | Takeout Menu">
+    <meta name="twitter:description" content="Here you can find the takeout menu for our traditional indian restaurant in Burlington, Ontario. It features a wide selection of our Indian curries and sides.">
+    <meta property="og:title" content="Prince of India | Traditional Indian Cuisine | Takeout Menu">
+    <meta property="og:url" content="https://princeofindia.restaurant/takeout">
+    <meta property="og:description" content="Here you can find the takeout menu for our traditional indian restaurant in Burlington, Ontario. It features a wide selection of our Indian curries and sides.">
+    <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+    <script>
+        $loadJS(["./assets/js/ES6/headerScripts-ES6.js"],["./assets/js/ES5/headerScripts-ES5.js"])
+        function $loadJS(ES6, ES5) {
+            if( 'noModule' in document.createElement('script')) $useJS = ES6, $defer = true
+            else $useJS = ES5, $type = '', $defer = 'defer'
+            for( var i = 0; i < $useJS.length; i++ ) {
+                elem = document.createElement('script');
+                elem.src = $useJS[i];
+                elem.defer = $defer;
+                document.head.appendChild(elem);
+            }
+        }
+    </script>
+    <link rel="icon" href="./assets/img/favicon.png">
+    <link rel="stylesheet" href="./assets/fa/css/all.css">
+    <link rel="stylesheet" href="./assets/css/princeofindia.css">
+    <title>Prince of India | Traditional Indian Cuisine | Menu</title>
+  </head>
+  <body>
+    <main id="main">
+      <section id="offers" class="no-pad">
+        <div class="txt-center pad-2rem bg-red txt-white btm-triangle-red pos-rel">
+          <h2>Menu</h2>
+          <p class="txt-2rem">Below you can find our full restaurant menu. All items listed are available to eat in our restaurant, or for takeout. If you have dietary requirements inform a member of staff.</p>
+        </div>
+        <div class="flex-row">
+          <div id="buffetOffer" class="flex pad-4rem offer w-100p">
+            <div class="order-menu-block offer-cont pad-4rem txt-center txt-white bg-trans-black center">
+              <div class="row">
+                <p class="txt-2rem">We are currently offering a generous discount on takeout orders which are collected from our restaurant.</p> 
+                <p class="txt-2rem">Call us on 905-333-1331 to take advantage of this discount. More information is available via the button below.</p>
+                <p class="txt-2rem">Alternatively use our booking form to reserve a table and enjoy a traditional meal in the comfort of our restaurant.</p>
+              </div>
+              <div class="margin-top-2rem">
+                <a href="./offers" class="button txt-2rem bg-blue">Special Offers</a>
+                <a href="./booking" class="button txt-2rem bg-green">Reservations</a>
+              </div>
+              <div class="margin-top-2rem">
+                <embed class="scale-down" src="./assets/pdf/takeoutmenu.pdf" height="500" type="application/pdf">
+              </div>
+              <p class="txt-2rem margin-top-4rem"><em>Click the button below to open our menu in a new window.</em></p> 
+              <a href="./assets/pdf/takeoutmenu.pdf" class="button txt-2rem bg-mustard">New Window</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

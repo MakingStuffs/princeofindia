@@ -1,0 +1,73 @@
+.txt-right {
+  text-align: right;
+}
+.txt-center {
+  text-align: center;
+}
+blockquote {
+  font-size: 2.5rem;
+  font-style: italic;
+  text-align: center;
+  width: fit-content;
+  margin:0px auto 0px auto;
+  position: relative;
+}
+blockquote::before {
+  content: '\f10d';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 3rem;
+  color: rgba(0,0,0, 0.8);
+  width: fit-content;
+  padding: 1rem;
+  color: white;
+  position: absolute;
+  left: 5rem;
+  top: 0%;
+}
+blockquote > p {
+  display: inline-block;
+  max-width: 75%;
+  font-family: 'Kaushan Script', cursive;
+
+}
+blockquote > p::after {
+  content: '\f10e';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 3rem;
+  color: rgba(0,0,0, 0.8);
+  width: fit-content;
+  padding: 1rem;
+  color: white;
+  position: absolute;
+  right: 5rem;
+  top: 0;
+}
+blockquote > .author {
+  font-size: 1.5rem;
+  background-color: unset !important;
+}
+blockquote > .author > p::before {
+  content: '-';
+  font-size: 2rem;
+  left: -1rem;
+}
+.india-font {
+  font-family: 'Kaushan Script', cursive !important;
+}
+.txt-3rem {
+  font-size: 3rem !important;
+}
+.txt-4rem {
+  font-size: 4rem !important;
+}
+.txt-25rem {
+  font-size: 2.5rem;
+}
+.txt-2rem {
+  font-size: 2rem !important;
+}
+.txt-15rem {
+  font-size: 1.5rem !important;
+}
