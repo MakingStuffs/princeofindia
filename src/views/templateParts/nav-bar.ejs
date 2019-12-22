@@ -1,3 +1,4 @@
+<% const links = JSON.parse(include("../../assets/json/nav.json")); %>
 <nav id="topNav">
     <div id="logo" class="nav-logo">
         <a href="/" class="india-font">Prince of India</a>
@@ -6,6 +7,8 @@
         <i class="fas fa-bars"></i>
     </div>
     <ul id="ulNav">
-        <li class="nav-link"><a href="" title=""></a></li>
+        <% links.navLinks.forEach(link => { %>
+            <li><a title="<%= link.title %>" href="<%= link.href %>"><%= link.text %></a></li>
+        <% }); %>
     </ul>
 </nav>
