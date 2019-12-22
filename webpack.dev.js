@@ -57,6 +57,20 @@ module.exports = merge(common, {
                 ]
             },
             {
+                test: /\.(ttf|woff|woff2|eot)/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            publicPath: path.resolve(__dirname, '/assets/webfonts'),
+                            outputPath: 'assets/webfonts',
+                            name: '[name].[ext]',
+                            esModule: false
+                        }
+                    }
+                ]
+            },
+            {
                 test: /\.ejs$/,
                 use: ['html-loader', 'ejs-html-loader']
             },
