@@ -1,14 +1,14 @@
 <% const links = JSON.parse(include("../../assets/json/nav.json")); %>
-<nav id="topNav">
-    <div id="logo" class="nav-logo">
+<nav class="nav-bar">
+    <div class="nav-logo">
         <a href="/" class="india-font">Prince of India</a>
     </div>
-    <div class="nav-icon">
-        <i class="fas fa-bars"></i>
-    </div>
-    <ul id="ulNav">
+    <ul class="nav-list">
         <% links.navLinks.forEach(link => { %>
-            <li><a title="<%= link.title %>" href="<%= link.href %>"><%= link.text %></a></li>
+            <li><a title="<%= link.title %>" href="<%= link.href %>" class="nav-link"><%= link.text %></a></li>
         <% }); %>
     </ul>
+    <div class="nav-responsive">
+        <i class="fas fa-bars"></i>
+    </div>
 </nav>
