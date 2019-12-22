@@ -61,7 +61,6 @@
         z-index: 1;
     }
 }
-
 .header-box {
     width: 40%;
     z-index: 2;
@@ -144,26 +143,49 @@
         }
     }
 }
-
-/* menu/bar */
-.menu-section, .bar-section {
-    display: flex;
-    flex-flow: row wrap;
+/* info section */
+.info-wrapper {
+    background: linear-gradient(-45deg, #EAEFF2, $lightRed);
+}
+.info-section {
     width: 100%;
-    background: white;
+    padding: 4rem;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.info-details {
     height: 50vh;
-    .details {
-        flex: 1 0;
-        min-width: 50%;
-        padding: 4rem;
-    }
+    max-width: 35vw;
+    margin: auto -6rem auto auto;
+    z-index: 2;
+    background: linear-gradient(45deg, $red, $darkRed);
+    padding: 2rem;
+    color: white;
+    box-shadow: 0.3rem 0.3rem 0.7rem rgba(0,0,0,0.3);
+    font-size: 1.5rem;
+    font-family: 'Prince Body';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-    .image {
-        flex: 1 0;
-        min-width: 50%;
-        height: inherit;
-        background: url('../img/curry-and-rice.jpg') center/cover no-repeat;
+    h2 {
+        font-size: 4.5rem;
     }
+}
+.info-image {
+    box-shadow: 0.3rem 0.3rem 0.7rem rgba(0,0,0,0.3);
+    background: url('../img/curry-and-rice.jpg') center/cover no-repeat;
+    width: 50vw;
+    height: 70vh;
+    min-height: 50vh;
+}
+.info-details.bar {
+    margin: auto auto auto -6rem;
+}
+.info-image.bar {
+    background: url('../img/indian-bar.jpg') center/cover no-repeat;
 }
 /* Services */
 .services {
