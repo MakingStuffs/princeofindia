@@ -57,8 +57,8 @@ module.exports = merge(common, {
                 ]
             },
             {
-                test: /\.html$/,
-                use: ['html-loader']
+                test: /\.ejs$/,
+                use: ['html-loader', 'ejs-html-loader']
             },
             {
                 test: /\.(jpeg|jpg|svg|gif|png)/,
@@ -79,7 +79,7 @@ module.exports = merge(common, {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
-            template: './src/views/pages/index.html'
+            template: './src/views/pages/index.ejs'
         }),
         new ExtractCssChunksPlugin({
             filename: 'assets/css/[name].css',
