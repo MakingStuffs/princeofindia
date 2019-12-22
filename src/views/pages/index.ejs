@@ -9,9 +9,11 @@
     <meta property="og:url" content="https://princeofindia.restaurant">
     <meta property="og:description" content="Traditional Indian restaurant serving food from north and south India with a fully licensed bar. We provide table service, takeout, catering and a lunch buffet.">
     <title>Prince of India | Traditional Indian Cuisine | Home</title>
+    <%- include("../templateParts/head-meta.ejs"); %>
   </head>
   <body>
-    <%- include("../templateParts/home-header.ejs") %>
+    <%- include("../templateParts/nav-bar.ejs"); %>
+    <%- include("../templateParts/home-header.ejs"); %>
     <main id="main">
       <div id="quote" class="bg-red pos-rel pad-2rem">
         <div class="btm-triangle-red txt-white">
@@ -129,5 +131,6 @@
         </div>
       </section>
     </main>
+    <%- include("../templateParts/footer.ejs"); %>
   </body>
 </html>
