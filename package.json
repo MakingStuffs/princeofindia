@@ -24,6 +24,8 @@
     "@fortawesome/fontawesome-free": "^5.12.0",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.4.0",
+    "ejs": "^3.0.1",
+    "ejs-html-loader": "^4.0.1",
     "express": "^4.17.1",
     "extract-css-chunks-webpack-plugin": "^4.7.1",
     "file-loader": "^5.0.2",
@@ -38,5 +40,6 @@
     "webpack-dev-middleware": "^3.7.2",
     "webpack-hot-middleware": "^2.25.0",
     "webpack-merge": "^4.2.2"
-  }
+  },
+  "dependencies": {}
 }
