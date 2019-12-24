@@ -1,30 +1,35 @@
-<footer id="footer" class="no-pad top-triangle-grey-up">
-    <div class="footer-row bg-grey flex-row flex-center">
-        <a href="https://twitter.com/princeofindiade" title="Prince of India on Twitter" rel="noopener noreferrer" target="_blank">
+<footer id="footer" class="footer">
+    <div class="social-bar">
+        <a href="https://twitter.com/princeofindiade" title="Prince of India on Twitter" rel="noopener noreferrer"
+            target="_blank">
             <p class="kill">Twitter</p>
         </a>
-        <a href="https://www.youtube.com/channel/UCXj8MJtk0Q7ENevC8ZWlCew/" title="Prince of India on YouTube" rel="noopener noreferrer" target="_blank">
+        <a href="https://www.youtube.com/channel/UCXj8MJtk0Q7ENevC8ZWlCew/" title="Prince of India on YouTube"
+            rel="noopener noreferrer" target="_blank">
             <p class="kill">YouTube</p>
         </a>
-        <a href="https://www.tripadvisor.co.uk/Restaurant_Review-g154984-d14880135-Reviews-Prince_of_India-Burlington_Ontario.html" title="Prince of India on Trip Advisor" rel="noopener noreferrer" target="_blank">
+        <a href="https://www.tripadvisor.co.uk/Restaurant_Review-g154984-d14880135-Reviews-Prince_of_India-Burlington_Ontario.html"
+            title="Prince of India on Trip Advisor" rel="noopener noreferrer" target="_blank">
             <p class="kill">Trip Advisor</p>
         </a>
-        <a href="https://www.google.com/maps/place/Prince+of+India/@43.3308843,-79.8219824,17z/data=!3m1!4b1!4m5!3m4!1s0x882c9fbb53585f77:0x4aabc3bbfa661798!8m2!3d43.3308843!4d-79.8197937" title="Prince of India reviews on Google" rel="noopener noreferrer" target="_blank">
+        <a href="https://www.google.com/maps/place/Prince+of+India/@43.3308843,-79.8219824,17z/data=!3m1!4b1!4m5!3m4!1s0x882c9fbb53585f77:0x4aabc3bbfa661798!8m2!3d43.3308843!4d-79.8197937"
+            title="Prince of India reviews on Google" rel="noopener noreferrer" target="_blank">
             <p class="kill">Google</p>
         </a>
-        <a href="https://www.facebook.com/princeofindia.ca/" title="Prince of India on Facebook" rel="noopener noreferrer" target="_blank">
+        <a href="https://www.facebook.com/princeofindia.ca/" title="Prince of India on Facebook"
+            rel="noopener noreferrer" target="_blank">
             <p class="kill">Facebook</p>
         </a>
         <a href="/contact" title="Prince of India Contact Form" rel="noopener noreferrer" target="_blank">
             <p class="kill">Contact</p>
         </a>
     </div>
-    <div id="locationCont" class="block no-pad">
-            <div id="restaurantMap">
-                <script>
-                    // Google map section
-                    var mapElem = document.querySelector('#restaurantMap');
-                    var initMap = function ()  {
+    <div class="footer-wrapper">
+        <div class="restauant-map">
+            <script>
+                // Google map section
+                var mapElem = document.querySelector('#restaurantMap');
+                var initMap = function () {
                     var latLong = {
                         lat: 43.3308843,
                         lng: -79.8197937,
@@ -41,12 +46,12 @@
                         animation: google.maps.Animation.DROP,
                     });
                     var openHours = '<div class="mapWindow">';
-                        openHours += '<p>1235 Fairview St, Burlington, ON L7S 2H9, Canada</p>';
-                        openHours += '<p>Open Monday to Saturday</p>';
-                        openHours += '<p>from 11:30am to 11:00pm</p>';
-                        openHours += '<p>Sundays & Bank Holidays</p>';
-                        openHours += '<p>from 11:30am to 10pm</p>';
-                        openHours += '</div>';
+                    openHours += '<p>1235 Fairview St, Burlington, ON L7S 2H9, Canada</p>';
+                    openHours += '<p>Open Monday to Saturday</p>';
+                    openHours += '<p>from 11:30am to 11:00pm</p>';
+                    openHours += '<p>Sundays & Bank Holidays</p>';
+                    openHours += '<p>from 11:30am to 10pm</p>';
+                    openHours += '</div>';
                     var infoWindow = new google.maps.InfoWindow({
                         content: openHours,
                     });
@@ -55,47 +60,44 @@
                         map.setZoom(18);
                         map.setCenter(marker.getPosition());
                     });
-                    };
-                </script>
-                <script src="https://maps.googleapis.com/maps/api/js?key=<APIKEY>&callback=initMap" defer></script>
-            </div>
-            <div id="locationDetails" class="w-50p">
-                <div class="pad-2rem bg-trans-black">
-                    <div class="location-row txt-white">
-                    <h3 class="india-font txt-3rem location-left">Address</h3>
-                    <div class="location-right">
-                        <address class="txt-25rem">
-                        <p>1235 Fairview St, Burlington, Ontario, L7S 2H9, Canada</p>
+                };
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=<APIKEY>&callback=initMap" defer></script>
+        </div>
+        <div class="restauant-info">
+            <div class="">
+                <div class="">
+                    <h3 class="">Address</h3>
+                    <div class="">
+                        <address class="">
+                            <p>1235 Fairview St, Burlington, Ontario, L7S 2H9, Canada</p>
                         </address>
                     </div>
-                    </div>
-                    <div class="location-row txt-white">
-                    <h3 class="india-font txt-3rem location-left">Phone</h3>
-                    <div class="location-right">
-                        <p class="txt-25rem">
+                </div>
+                <div class="">
+                    <h3 class="">Phone</h3>
+                    <div class="">
+                        <p class="">
                             905-333-1331
                         </p>
-                        </div>
                     </div>
-                    <div class="location-row txt-white">
-                    <h3 class="india-font txt-3rem location-left">Hours</h3>
-                    <div class="location-right">
-                        <p class="txt-25rem">Sun to Thurs: 11:30am to 10:00pm</p>
-                        <p class="txt-25rem">Fri to Sat: 11:30am to 10:30pm</p>
+                </div>
+                <div class="">
+                    <h3 class="">Hours</h3>
+                    <div class="">
+                        <p class="">Sun to Thurs: 11:30am to 10:00pm</p>
+                        <p class="">Fri to Sat: 11:30am to 10:30pm</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="footer-row pad-2rem txt-2rem txt-center">
-        <a href="https://www.skipthedishes.com/prince-of-india" class="delivery-provider" title="Visit the Prince of India page on Skip The Dishes">
-            <p class="kill">Skip The Dishes</p>
-        </a>
-        <a href="https://www.doordash.com/store/prince-of-india-burlington-441333/?utm_campaign=gpa" class="delivery-provider" title="Visit Door Dash">
-            <p class="kill">Door Dash</p>
-        </a>
+    <div class="footer-links">
+        <a href="/terms" title="The terms of use which are applicable to this website"
+            class="txt-15rem footer-link">Terms of Use</a> | <a href="/sitemap.xml" title="Prince of India's sitemap"
+            class="txt-15rem footer-link">Sitemap</a>
     </div>
-    <div class="bg-grey txt-center pad-2rem txt-white footer-row">
-        <a href="/terms" title="The terms of use which are applicable to this website" class="txt-15rem footer-link">Terms of Use</a> | <a href="/sitemap.xml" title="Prince of India's sitemap" class="txt-15rem footer-link">Sitemap</a>
+    <div class="credit">
+        <p>Made with love by <a href="" title="" rel="noopener noreferrer">Making Stuffs</a></p>
     </div>
 </footer>
