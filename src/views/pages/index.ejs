@@ -18,27 +18,28 @@
 </head>
 
 <body>
-  <%- include("../templateParts/home-header.ejs"); %>
   <%- include("../templateParts/nav-bar.ejs"); %>
+  <%- include("../templateParts/home-header.ejs"); %>
   <main id="main">
-    <section class="info-wrapper">
-      <div class="info-section">
+    
+    <section id="info" class="info-wrapper">
+      <div class="section-heading">
+        <h2>A Slice of <span class="txt-orange">India</span> in Burlington</h2>
+        <p>Our restaurant offers residents of Burlington a fully immersive Indian dining experience.</p>
+      </div>
+      <div class="info-section menu">
         <div class="info-details">
-          <h2>Traditional Taste</h2>
+          <h3>Traditional Taste</h3>
           <p>We have a menu consisting of carefully selected traditional dishes which originate from North and South
             India. We have a wide range of poultry, lamb, fish and vegetarian curries, and do not serve any pork or
             beef.</p>
           <p>The exotic dishes on our menu include a mix of secret family recipes, which have been passed through
             multiple generations, and homeland comforts.</p>
         </div>
-        <div class="info-image">
-        </div>
       </div>
-      <div class="info-section">
-        <div class="info-image bar">
-        </div>
-        <div class="info-details bar">
-          <h2>Fully Licensed Bar</h2>
+      <div class="info-section bar">
+        <div class="info-details">
+          <h3>Fully Licensed Bar</h3>
           <p>No true Indian restaurant is complete without a fully equipped bar to match. And we are no different.</p>
           <p>Our bar is fully licensed and is happy to provide you with a wide range of beers (on tap and bottled),
             wines, spirits, juices and mixers.</p>
@@ -47,9 +48,20 @@
         </div>
       </div>
     </section>
-    <section id="services" class="bg-black no-pad pos-rel">
-      <div class="txt-center pad-2rem txt-white bg-red btm-triangle-red pos-rel">
-        <h2>Our Services</h2>
+
+    <section class="hero-image">
+      <div class="hero-content">
+        <div class="hero-heading">
+          <h2>Discover <span class="txt-red">Something</span> Here</h2>
+          <p>Some text to go below what you will discover</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="services-wrapper">
+      <div class="section-heading">
+        <h2>A Slice of <span class="txt-orange">India</span> in Burlington</h2>
+        <p>Our restaurant offers residents of Burlington a fully immersive Indian dining experience.</p>
       </div>
       <div class="services">
         <div class="service" id="buffet">
