@@ -93,7 +93,14 @@ module.exports = merge(common, {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
-            template: './src/views/pages/index.ejs'
+            template: './src/views/pages/index.ejs',
+            filename: 'index.html',
+            chunks: ['main']
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/views/pages/offers.ejs',
+            filename: 'offers.html',
+            chunks: ['offers']        
         }),
         new ExtractCssChunksPlugin({
             filename: 'assets/css/[name].css',
