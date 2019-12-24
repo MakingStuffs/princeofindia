@@ -1,11 +1,6 @@
 {
   "navLinks": [
     {
-      "title": "Homepage intro section",
-      "href": "/",
-      "text": "Home"
-    },
-    {
       "title": "Homepage services section",
       "href": "/#services",
       "text": "Services"
