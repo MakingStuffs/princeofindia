@@ -4,16 +4,33 @@
 @import './fonts';
 @import './atomic';
 @import './text';
+/* Reuseable classes */
+.section-heading {
+    text-align: center;
+    padding: 6rem 3rem;
+    color: rgba(0,0,0,0.8);
+    flex: 1 0 100%;
+
+    h2 {
+        font-size: 5rem;
+    }
+
+    p {
+        font-size: 2rem;
+        font-family: 'Prince Body';
+        font-style: italic;
+    }
+}
 
 /* Nav */
 .nav-bar {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    box-shadow: 0.3rem 0.3rem 0.6rem rgba(0,0,0,0.3);
-    background: linear-gradient(45deg, $red, $darkRed);
     color: white;
     font-size: 1.5rem;
+    position: fixed;
+    z-index: 5;
 }
 .nav-logo {
     display: flex;
@@ -93,8 +110,9 @@
         height: 6rem;
         font-size: 2.5rem;
         border-radius: 50%;
-        background: linear-gradient(45deg, $darkGreen, $green, $green, $lightGreen) bottom left/210% 110%;
+        background: $orange;
         display: flex;
+        color: #fff;
         flex-direction: column;
         justify-content: center;
         transition: 0.3s;
@@ -117,7 +135,6 @@
             
         }
         &:hover{
-            background-position: bottom right;
             transform: translateX(-1.5rem);
             span {
                 opacity: 1;
@@ -145,7 +162,10 @@
 }
 /* info section */
 .info-wrapper {
-    background: linear-gradient(-45deg, #EAEFF2, $lightRed);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    padding: 2rem;
 }
 .info-section {
     width: 100%;
@@ -154,52 +174,110 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    box-shadow: 0.3rem 0.3rem 0.7rem rgba(0,0,0,0.3);
+    background: url('../img/curry-and-rice.jpg') center/cover no-repeat;
+    width: 45vw;
+    min-width: 35rem;
+    min-height: 70vh;
+    min-height: 50vh;
+    flex: 1 0;
+    margin: 2rem;
+}
+.info-section.bar {
+    background: url('../img/indian-bar.jpg') center/cover no-repeat;
 }
 .info-details {
-    height: 50vh;
-    max-width: 35vw;
-    margin: auto -6rem auto auto;
+    min-height: 50vh;
+    max-width: 95%;
     z-index: 2;
-    background: linear-gradient(45deg, $red, $darkRed);
     padding: 2rem;
-    color: white;
-    box-shadow: 0.3rem 0.3rem 0.7rem rgba(0,0,0,0.3);
+    color: rgba(255,255,255,0.8);
     font-size: 1.5rem;
     font-family: 'Prince Body';
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: $orange;
+    margin: auto;
+    box-shadow: 0.3rem 0.3rem 0.7rem rgba(0,0,0,0.3);
 
-    h2 {
+    h3 {
+        color: rgba(255,255,255,0.9);
+        font-family: 'Prince Title';
         font-size: 4.5rem;
+        margin: 0;
     }
 }
-.info-image {
-    box-shadow: 0.3rem 0.3rem 0.7rem rgba(0,0,0,0.3);
-    background: url('../img/curry-and-rice.jpg') center/cover no-repeat;
-    width: 50vw;
-    height: 70vh;
-    min-height: 50vh;
+/* Hero */
+.hero-image {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-color:black;
+    margin: 8rem 0 2rem 0;
+    overflow: hidden;
+    z-index: 3;
+    display: block;
+
+    &::before {
+        background: url('../img/spices-generic-3.jpeg') center/cover no-repeat;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        content: '';
+        position: absolute;
+        opacity: 0.5;
+        transition: 2s;
+        z-index: 1;
+    }
+
+    &:hover {
+        &::before {
+            height: 110%;
+            width: 110%;
+        }
+    }
+
 }
-.info-details.bar {
-    margin: auto auto auto -6rem;
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
 }
-.info-image.bar {
-    background: url('../img/indian-bar.jpg') center/cover no-repeat;
+.hero-heading {
+    margin: auto;
+    color: white;
+    z-index: 4;
+    text-shadow: 0.2rem 0.2rem 0.4rem rgba(0,0,0,0.9);
+
+    h2 {
+        font-size: 6rem;
+    }
+    p {
+        font-size: 2rem;
+        font-style: italic;
+        font-family: 'Prince Body';
+    }
 }
+
 /* Services */
 .services {
     display: flex;
     flex-wrap: wrap;
+    padding: 0 2rem 2rem 2rem;
 }
 .service {
     flex: 1 0 auto;
-    min-width: 28rem;
-    width: 50%;
+    min-width: 30rem;
+    width: calc(50% - 4rem);
     padding: 2rem;
     background-color: white;
     position: relative;
     height: 50vh;
+    margin: 2rem;
+    box-shadow: 0.3rem 0.3rem 0.6rem rgba(0,0,0,0.4);
 }
 .service-image {
     position: absolute;
@@ -208,6 +286,20 @@
     top: 0;
     left: 0;
     content: '';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    p {
+        background: $red;
+        color: white;
+        padding: 2rem;
+        max-width: 60%;
+        font-size: 4rem;
+        margin: auto;
+        font-family: 'Prince Title';
+        box-shadow: 0.3rem 0.3rem 0.6rem rgba(0,0,0,0.3);
+    }
 }
 .service-image[data-value="buffet"] {
     background: url('../img/indian-buffet-service.jpg') center/cover no-repeat;
@@ -220,4 +312,32 @@
 }
 .service-image[data-value="alacarte"] {
     background: url('../img/indian-a-la-carte-service.jpeg') center/cover no-repeat;
+}
+
+/* footer */
+.footer-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    padding: 2rem;
+}
+.restaurant-map, .restaurant-info {
+    flex: 1 0 50%;
+    min-width: 28rem;
+    width: 50%;
+}
+.credit {
+    background-color: $darker;
+    color: white;
+    text-align: center;
+    font-family: 'Prince Body';
+    padding: 2rem;
+    font-size: 1.5rem;
+    p {
+        margin: 0;
+    }
+
+    a {
+        color: $green;
+    }
 }
