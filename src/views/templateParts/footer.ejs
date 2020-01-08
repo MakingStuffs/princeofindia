@@ -2,93 +2,49 @@
     <div class="social-bar">
         <a href="https://twitter.com/princeofindiade" title="Prince of India on Twitter" rel="noopener noreferrer"
             target="_blank">
-            <p class="kill">Twitter</p>
+            <i class="fab fa-twitter"></i>
         </a>
         <a href="https://www.youtube.com/channel/UCXj8MJtk0Q7ENevC8ZWlCew/" title="Prince of India on YouTube"
             rel="noopener noreferrer" target="_blank">
-            <p class="kill">YouTube</p>
+            <i class="fab fa-youtube"></i>
         </a>
         <a href="https://www.tripadvisor.co.uk/Restaurant_Review-g154984-d14880135-Reviews-Prince_of_India-Burlington_Ontario.html"
             title="Prince of India on Trip Advisor" rel="noopener noreferrer" target="_blank">
-            <p class="kill">Trip Advisor</p>
+            <i class="fab fa-tripadvisor"></i>
         </a>
         <a href="https://www.google.com/maps/place/Prince+of+India/@43.3308843,-79.8219824,17z/data=!3m1!4b1!4m5!3m4!1s0x882c9fbb53585f77:0x4aabc3bbfa661798!8m2!3d43.3308843!4d-79.8197937"
             title="Prince of India reviews on Google" rel="noopener noreferrer" target="_blank">
-            <p class="kill">Google</p>
+            <i class="fab fa-google"></i>
         </a>
         <a href="https://www.facebook.com/princeofindia.ca/" title="Prince of India on Facebook"
             rel="noopener noreferrer" target="_blank">
-            <p class="kill">Facebook</p>
+            <i class="fab fa-facebook-f"></i>
         </a>
         <a href="/contact" title="Prince of India Contact Form" rel="noopener noreferrer" target="_blank">
-            <p class="kill">Contact</p>
+            <i class="fas fa-envelope-open-text"></i>
         </a>
     </div>
+    <div class="restaurant-map">
+    </div>
     <div class="footer-wrapper">
-        <div class="restauant-map">
-            <script>
-                // Google map section
-                var mapElem = document.querySelector('#restaurantMap');
-                var initMap = function () {
-                    var latLong = {
-                        lat: 43.3308843,
-                        lng: -79.8197937,
-                    };
-                    var map = new google.maps.Map(mapElem, {
-                        center: latLong,
-                        zoom: 13,
-                        mapTypeControl: false
-                    });
-                    var marker = new google.maps.Marker({
-                        position: latLong,
-                        map: map,
-                        title: 'Prince of India, Ontario',
-                        animation: google.maps.Animation.DROP,
-                    });
-                    var openHours = '<div class="mapWindow">';
-                    openHours += '<p>1235 Fairview St, Burlington, ON L7S 2H9, Canada</p>';
-                    openHours += '<p>Open Monday to Saturday</p>';
-                    openHours += '<p>from 11:30am to 11:00pm</p>';
-                    openHours += '<p>Sundays & Bank Holidays</p>';
-                    openHours += '<p>from 11:30am to 10pm</p>';
-                    openHours += '</div>';
-                    var infoWindow = new google.maps.InfoWindow({
-                        content: openHours,
-                    });
-                    marker.addListener('click', function () {
-                        infoWindow.open(map, marker);
-                        map.setZoom(18);
-                        map.setCenter(marker.getPosition());
-                    });
-                };
-            </script>
-            <script src="https://maps.googleapis.com/maps/api/js?key=<APIKEY>&callback=initMap" defer></script>
+        <div class="address">
+            <h3>Address</h3>
+            <address class="">
+                1235 Fairview St,</br>
+                Burlington,</br>
+                Ontario,</br>
+                L7S 2H9,</br>
+                Canada</br>
+                <a href="tel:+1-905-333-1331" class="pone">
+                    905-333-1331
+                </a>
+            </address>
         </div>
-        <div class="restauant-info">
+        <div class="hours">
+            <h3>Hours</h3>
             <div class="">
-                <div class="">
-                    <h3 class="">Address</h3>
-                    <div class="">
-                        <address class="">
-                            <p>1235 Fairview St, Burlington, Ontario, L7S 2H9, Canada</p>
-                        </address>
-                    </div>
-                </div>
-                <div class="">
-                    <h3 class="">Phone</h3>
-                    <div class="">
-                        <p class="">
-                            905-333-1331
-                        </p>
-                    </div>
-                </div>
-                <div class="">
-                    <h3 class="">Hours</h3>
-                    <div class="">
-                        <p class="">Sun to Thurs: 11:30am to 10:00pm</p>
-                        <p class="">Fri to Sat: 11:30am to 10:30pm</p>
-                    </div>
-                </div>
+                <p>Sun to Thurs: 11:30am to 10:00pm</p>
+                <p>Fri to Sat: 11:30am to 10:30pm</p>
             </div>
         </div>
     </div>
