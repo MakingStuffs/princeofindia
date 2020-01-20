@@ -1,0 +1,85 @@
+@import './colors';
+
+:host {
+    margin: 2rem 0;
+    display: block;
+}
+
+h3 {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+}
+
+p {
+    font-size: 1.5rem;
+    color: rgba($dark, $alpha: 0.85)
+}
+
+.attr-row {
+    display: flex;
+    flex-direction: column;
+    opacity: 0.85;
+
+    h4 {
+        font-size: 1.25rem;
+        margin:0 1rem 0 0;
+    }
+}
+
+.taste-row,
+.diet-row,
+.options-row {
+    display: flex;
+    align-items: baseline;
+    flex-flow: row wrap;
+}
+
+.option,
+.taste,
+.diet {
+    padding: 0.5rem;
+    border-radius: 20px;
+    margin: 0 0.5rem 0.5rem 0;
+    display: inline-block;
+}
+
+.option {
+    background-color: $turquoise;
+    color: rgba(white, 0.85);
+}
+
+.taste.hot {
+    background-color: $red;
+    color: rgba(white, 0.85);
+}
+
+.taste.medium {
+    background-color: $orange;
+    color: rgba(white, 0.85);
+}
+
+.taste.mild {
+    background-color: $lightOrange;
+    color: rgba($dark, 0.85);
+}
+
+.diet.vegetarian {
+    background-color: $green;
+    color: rgba(white, 0.85);
+}
+
+.diet.dairy,
+.diet.nuts {
+    background-color: $lightTurquoise;
+    color: rgba($dark, 0.85);
+}
+
+.diet.meat {
+    background-color: $darkRed;
+    color: rgba(white, 0.85);
+}
+
+.diet.fish {
+    background-color: $darkTurquoise;
+    color: rgba(white, 0.85);
+}

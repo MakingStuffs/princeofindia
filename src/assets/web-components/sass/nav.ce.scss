@@ -1,0 +1,31 @@
+@import './colors';
+@import './fonts';
+
+:host {
+    width: calc(100% - 2rem);
+    cursor: pointer;
+    font-family: 'Prince Body';
+    font-size: 2rem;
+}
+
+:host(:not([open])) .options {
+    display: none;
+}
+.wrapper {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: white;
+    z-index: 2;
+}
+.active {
+    display: block;
+}
+
+.option {
+    padding: 1rem;
+
+    &:hover {
+        background-color: rgba(0,0,0,0.3);
+    }
+}
