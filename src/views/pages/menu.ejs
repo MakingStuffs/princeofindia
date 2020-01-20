@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="description"
+    content="Here you can find the takeout menu for our traditional indian restaurant in Burlington, Ontario. It features a wide selection of our Indian curries and sides.">
+  <meta name="keywords"
+    content="indian takeout menu, indian takeout, indian food to takeout, food, indian, burlington, indian food burlington, indian takeout burlington, takeout">
+  <meta name="twitter:title" content="Prince of India | Traditional Indian Cuisine | Takeout Menu">
+  <meta name="twitter:description"
+    content="Here you can find the takeout menu for our traditional indian restaurant in Burlington, Ontario. It features a wide selection of our Indian curries and sides.">
+  <meta property="og:title" content="Prince of India | Traditional Indian Cuisine | Takeout Menu">
+  <meta property="og:url" content="https://princeofindia.restaurant/takeout">
+  <meta property="og:description"
+    content="Here you can find the takeout menu for our traditional indian restaurant in Burlington, Ontario. It features a wide selection of our Indian curries and sides.">
+  <%- include('../templateParts/head-meta.ejs') %>
+  <title>Prince of India | Traditional Indian Cuisine | Menu</title>
+</head>
+
+<body>
+  <%- include ('../templateParts/nav-bar.ejs') %>
+  <%- include('../templateParts/header.ejs', {title: 'Menu'}) %>
+  <main id="main">
+    <section id="menu">
+      <div class="section-heading">
+        <h3>Our <span class="txt-orange">Menu</span></h3>
+        <p class="txt-2rem">Below you can find our full restaurant menu. All items listed are available to eat in our
+          restaurant, or for takeout. If you have dietary requirements inform a member of staff.</p>
+      </div>
+      <div class="announcement-banner">
+        <h4>Takeout Discount</h4>
+        <p>We are currently offering a generous discount on takeout orders which are collected from our restaurant.
+        </p>
+        <div class="flex-row">
+          <a href="./offers">Special Offers</a>
+          <a href="./booking">Reservations</a>
+        </div>
+      </div>
+      <ms-menu></ms-menu>
+    </section>
+  </main>
+  <%- include ('../templateParts/footer.ejs') %>
+</body>
+
+</html>
