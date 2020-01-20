@@ -11,3 +11,13 @@
 .txt-green {
     color:$green;
 }
+
+.shrink {
+    max-height: 0 !important;
+    padding: 0 !important;
+}
+
+.flex-row {
+    display: flex;
+    flex-flow: row wrap;
+}
