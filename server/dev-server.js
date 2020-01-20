@@ -15,16 +15,6 @@ app.use(webpackDevMiddleware(compiler, {
 
 app.use(webpackHotMiddleware(compiler));
 
-app.get('/offers', (req, res) => {
-    compiler.outputFileSystem.readFile('/Users/paulsingh/Dev/Projects/princeofindia/dist/offers.html', (err, result) => {
-        if (err) {
-            console.log(err)
-        } else {
-            res.set('content-type', 'text/html')
-            res.send(result)
-            res.end()
-        }
-    });
-})
+require('./routes/routes')(app, compiler);
 
 app.listen(3000, () => console.log('Connected on port 3000'));
