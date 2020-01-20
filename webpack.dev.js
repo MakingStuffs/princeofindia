@@ -11,7 +11,8 @@ const postcssPresetenv = require('postcss-preset-env');
 module.exports = merge(common, {
     mode: 'development',
     entry: [
-        'webpack-hot-middleware/client?path=/__webpack_hmr'
+        'webpack-hot-middleware/client?path=/__webpack_hmr',
+        './src/assets/js/services.js'
     ],
     target: 'web',
     devtool: '#sourcemap',
@@ -38,7 +39,7 @@ module.exports = merge(common, {
                 }
             },
             {
-                test: /\.scss/,
+                test: /(?<!\.ce)\.scss$/,
                 use: [{
                         loader: ExtractCssChunksPlugin.loader,
                         options: {
@@ -69,6 +70,18 @@ module.exports = merge(common, {
                 ]
             },
             {
+                test: /\.ce\.scss$/,
+                use: ['css-loader', {
+                        loader: 'postcss-loader',
+                        options: {
+                            indent: 'postcss',
+                            plugins: () => postcssPresetenv(),
+                            sourceMap: 'inline'
+                        },
+                    },
+                    'sass-loader']
+            },
+            {
                 test: /\.(ttf|woff|woff2|eot)/,
                 use: [{
                     loader: 'file-loader',
@@ -82,7 +95,12 @@ module.exports = merge(common, {
             },
             {
                 test: /\.ejs$/,
-                use: ['html-loader', 'ejs-html-loader']
+                use: ['html-loader', {
+                    loader: 'ejs-html-loader',
+                    options: {
+                        menu: require('./src/assets/json/menu.json')
+                    }
+                }]
             },
             {
                 test: /\.(jpeg|jpg|svg|gif|png)/,
@@ -108,12 +126,19 @@ module.exports = merge(common, {
         new HtmlWebpackPlugin({
             template: './src/views/pages/index.ejs',
             filename: './index.html',
-            chunks: ['main']
         }),
         new HtmlWebpackPlugin({
             template: './src/views/pages/offers.ejs',
             filename: './offers.html',
-            chunks: ['offers']
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/views/pages/menu.ejs',
+            filename: './menu.html',
+            options: {
+                menu: {
+                    menu: 'hey'
+                },
+            }
         }),
         new ExtractCssChunksPlugin({
             filename: 'assets/css/[name].css',
