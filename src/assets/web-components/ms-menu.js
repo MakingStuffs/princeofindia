@@ -9,7 +9,7 @@ import itemCSS from './sass/items.ce.scss';
 import navCSS from './sass/nav.ce.scss';
 import menu from '../json/menu.json';
 
-/* global HTMLElement customElements window console document*/
+/* global HTMLElement customElements window document*/
 
 class msMenu extends HTMLElement {
     constructor() {
