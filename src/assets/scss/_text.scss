@@ -1,5 +1,5 @@
 h1 {
-    font-size: 8rem;
+    font-size: 5rem;
     font-family: 'Prince Title';
     text-shadow: 0.3rem 0.3rem 0.7rem rgba(0,0,0,0.8);
     margin: 0;
@@ -8,6 +8,20 @@ h1 {
 
 h2 {
     margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: 'Prince body';
+}
+
+h3,h4 {
     font-size: 3rem;
     font-family: 'Prince Title';
+    margin: 0;
+}
+
+h5 {
+    font-size: 1.5rem;
+    font-family: 'Prince Body';
+    text-transform: uppercase;
+    margin: 1rem 0;
 }
