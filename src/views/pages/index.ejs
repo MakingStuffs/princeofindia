@@ -19,17 +19,17 @@
 
 <body>
   <%- include("../templateParts/nav-bar.ejs"); %>
-  <%- include("../templateParts/home-header.ejs"); %>
+  <%- include("../templateParts/header.ejs"); %>
   <main id="main">
-    
+
     <section id="info" class="info-wrapper">
       <div class="section-heading">
-        <h2>A Slice of <span class="txt-orange">India</span> in Burlington</h2>
+        <h3>A Slice of <span class="txt-orange">India</span> in Burlington</h3>
         <p>Our restaurant offers residents of Burlington a fully immersive Indian dining experience.</p>
       </div>
-      <div class="info-section menu">
-        <div class="info-details">
-          <h3>Traditional Taste</h3>
+      <div class="info menu shrinkable">
+        <h4>Traditional Taste</h4>
+        <div class="info-text shrink-this shrink">
           <p>We have a menu consisting of carefully selected traditional dishes which originate from North and South
             India. We have a wide range of poultry, lamb, fish and vegetarian curries, and do not serve any pork or
             beef.</p>
@@ -37,9 +37,9 @@
             multiple generations, and homeland comforts.</p>
         </div>
       </div>
-      <div class="info-section bar">
-        <div class="info-details">
-          <h3>Fully Licensed Bar</h3>
+      <div class="info bar shrinkable">
+        <h4>Fully Licensed Bar</h4>
+        <div class="info-text shrink-this shrink">
           <p>No true Indian restaurant is complete without a fully equipped bar to match. And we are no different.</p>
           <p>Our bar is fully licensed and is happy to provide you with a wide range of beers (on tap and bottled),
             wines, spirits, juices and mixers.</p>
@@ -52,7 +52,7 @@
     <section class="hero-image" hero>
       <div class="hero-content">
         <div class="hero-heading">
-          <h2>Discover <span class="txt-red">Something</span> Here</h2>
+          <h3>Discover <span class="txt-red">Something</span> Here</h3>
           <p>Some text to go below what you will discover</p>
         </div>
       </div>
@@ -60,92 +60,75 @@
 
     <section id="services" class="services-wrapper">
       <div class="section-heading">
-        <h2>A Slice of <span class="txt-orange">India</span> in Burlington</h2>
+        <h3>A Slice of <span class="txt-orange">India</span> in Burlington</h3>
         <p>Our restaurant offers residents of Burlington a fully immersive Indian dining experience.</p>
       </div>
       <div class="services">
-        <div class="service" id="buffet">
-          <div class="service-image active" data-value="buffet">
-            <p class="service-label">Buffet</p>
-          </div>
-          <div class="service-panel bg-white hide kill flex" data-value="buffet-text">
-            <h3 class="india-font txt-3rem">Lunch Buffet</h3>
-            <div class="txt-2rem">
-              <p>
-                We off a traditional Indian lunch buffet which is sure to satisfy your taste buds and appetite.
-              </p>
-              <p>
-                Our daily lunch buffet costs just $12.99 per person and is unlimited. It features a generous selection
-                of traditional curries and sides, as well as rice, dips and salad.
-              </p>
-              <p>
-                For more information about our Indian lunch buffet please see our <a class="service-link" href="/offers"
-                  title="Prince of India's special offers">special offers</a>.
-              </p>
-            </div>
+        <div class="service shrinkable buffet" aria-describedby="buffetDesc" aria-labelledby="buffetLabel" tabindex="0">
+          <h4 id="buffetLabel">Buffet</h4>
+          <div class="service-text shrink-this shrink" id="buffetDesc">
+            <p>
+              We offer a traditional Indian lunch buffet which is sure to satisfy your taste buds and appetite.
+            </p>
+            <p>
+              Our daily lunch buffet costs just $12.99 per person and is unlimited. It features a generous selection
+              of traditional curries and sides, as well as rice, dips and salad.
+            </p>
+            <p>
+              For more information about our Indian lunch buffet please see our <a class="service-link" href="/offers"
+                title="Prince of India's special offers">special offers</a>.
+            </p>
           </div>
         </div>
-        <div class="service" id="takeOut">
-          <div class="service-image active" data-value="takeout">
-            <p class="service-label">Takeout</p>
-          </div>
-          <div class="service-panel bg-white hide kill flex" data-value="takeout-text">
-            <h3 class="india-font txt-3rem">Takeout</h3>
-            <div class="txt-2rem">
-              <p>
-                If you would to eat your food in the comfort of your own home, that's no problem! We provide a full
-                traditional Indian takeout service covering the local Burlington area.
-              </p>
-              <p>
-                You can choose to have your food delivered by one of our takeout providers -- <a class="service-link"
-                  href="" title="Prince of India on " rel="noopener noreferrer" target="_blank">Skip The Dishes</a>, <a
-                  class="service-link" href="" title="Prince of India on " rel="noopener noreferrer"
-                  target="_blank">Door Dash</a> -- or collect it from our restaurant yourself -- we currently offer a <a
-                  class="service-link" href="/offers" title="Prince of India discounts">discount on collections</a>.
-              </p>
-            </div>
+        <div class="service shrinkable takeout" aria-describedby="takeoutDesc" aria-labelledby="takeoutLabel"
+          tabindex="0">
+          <h4 id="takeoutLabel">Takeout</h4>
+          <div class="service-text shrink-this shrink" id="takeoutDesc">
+            <p>
+              If you would to eat your food in the comfort of your own home, that's no problem! We provide a full
+              traditional Indian takeout service covering the local Burlington area.
+            </p>
+            <p>
+              You can choose to have your food delivered by one of our takeout providers -- <a class="service-link"
+                href="" title="Prince of India on " rel="noopener noreferrer" target="_blank">Skip The Dishes</a>, <a
+                class="service-link" href="" title="Prince of India on " rel="noopener noreferrer" target="_blank">Door
+                Dash</a> -- or collect it from our restaurant yourself -- we currently offer a <a class="service-link"
+                href="/offers" title="Prince of India discounts">discount on collections</a>.
+            </p>
           </div>
         </div>
-        <div class="service" id="catering">
-          <div class="service-image active" data-value="catering">
-            <p class="service-label">Catering</p>
-          </div>
-          <div class="service-panel bg-white hide kill flex" data-value="catering-text">
-            <h3 class="india-font txt-3rem">Catering</h3>
-            <div class="txt-2rem">
-              <p>
-                We are able to provide a traditional Indian catering service for any of your special occasions.
-              </p>
-              <p>
-                Our catering service will enable you to serve all your favorite Indian dishes to your guests, with the
-                same high standard you would expect in our restaurant.
-              </p>
-              <p>
-                If you would like to bring the traditional flavours of our Indian cuisine to your event please contact
-                us using our <a href="/contact" title="Contact Prince of India" class="service-link">contact form</a>.
-              </p>
-            </div>
+        <div class="service shrinkable catering" aria-describedby="cateringDesc" aria-labelledby="cateringLabel"
+          tabindex="0">
+          <h4 id="cateringLabel">Catering</h4>
+          <div class="service-text shrink-this shrink" id="cateringDesc">
+            <p>
+              We are able to provide a traditional Indian catering service for any of your special occasions.
+            </p>
+            <p>
+              Our catering service will enable you to serve all your favorite Indian dishes to your guests, with the
+              same high standard you would expect in our restaurant.
+            </p>
+            <p>
+              If you would like to bring the traditional flavours of our Indian cuisine to your event please contact
+              us using our <a href="/contact" title="Contact Prince of India" class="service-link">contact form</a>.
+            </p>
           </div>
         </div>
-        <div class="service" id="dineIn">
-          <div class="service-image active" data-value="alacarte">
-            <p class="service-label">Dining</p>
-          </div>
-          <div class="service-panel bg-white hide kill flex" data-value="alacarte-text">
-            <h3 class="india-font txt-3rem">Dining</h3>
-            <div class="txt-2rem">
-              <p>
-                Our traditional Indian restaurant serves a wide variety of freshly prepared and traditional North and
-                South Indian dishes.
-              </p>
-              <p>
-                All dishes have been carefully selected using a mix of secret family recipes and national favorites.
-              </p>
-              <p>
-                We provide our guests with a truly traditional experience and cater to all allergies and we do not keep,
-                or serve, any pork or beef on our premises.
-              </p>
-            </div>
+        <div class="service shrinkable alacarte" aria-describedby="alacarteDesc" aria-labelledby="alacarteLabel"
+          tabindex="0">
+          <h4 id="alacarteLabel">Dining</h4>
+          <div class="service-text shrink-this shrink" id="alacarteDesc">
+            <p>
+              Our traditional Indian restaurant serves a wide variety of freshly prepared and traditional North and
+              South Indian dishes.
+            </p>
+            <p>
+              All dishes have been carefully selected using a mix of secret family recipes and national favorites.
+            </p>
+            <p>
+              We provide our guests with a truly traditional experience and cater to all allergies and we do not keep,
+              or serve, any pork or beef on our premises.
+            </p>
           </div>
         </div>
       </div>
