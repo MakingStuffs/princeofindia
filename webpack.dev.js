@@ -12,7 +12,6 @@ module.exports = merge(common, {
     mode: 'development',
     entry: [
         'webpack-hot-middleware/client?path=/__webpack_hmr',
-        './src/assets/js/services.js'
     ],
     target: 'web',
     devtool: '#sourcemap',
