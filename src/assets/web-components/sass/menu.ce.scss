@@ -1,6 +1,21 @@
 @import './fonts';
+
+:host {
+    display: block;
+    margin: 5rem 0;
+}
+
 .wrapper {
-    margin: 2rem;
-    border: 0.1rem solid rgba(0,0,0,0.3);
     position: relative;
+    width: 90%;
+    margin: 0 5%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@media only screen and (min-width: 1000px) {
+    .wrapper {
+        width: 100%;
+        margin: 0;
+    }
 }

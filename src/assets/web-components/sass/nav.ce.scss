@@ -2,30 +2,129 @@
 @import './fonts';
 
 :host {
-    width: calc(100% - 2rem);
+    width: 100%;
     cursor: pointer;
     font-family: 'Prince Body';
     font-size: 2rem;
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-color: white;
+    transform: translateY(0);
+    transition: 0.3s ease-in-out;
+}
+
+:host(:not([inView])) {
+    transition: 0.3s ease-in-out;
+    transform: translateY(100%);
 }
 
 :host(:not([open])) .options {
-    display: none;
+    transition: 0.3s cubic-bezier(0, 1, 0, 1);
+    max-height: 0;
+
+    .option {
+        visibility: hidden;
+    }
 }
+
+:host([open]) .active {
+    border-radius: 0.5rem 0.5rem 0 0;
+
+    .option {
+        border-radius: 0.5rem 0.5rem 0 0;
+    }
+}
+
 .wrapper {
-    position: sticky;
-    top: 0;
-    left: 0;
-    background-color: white;
+    background-color: rgba($dark, $alpha: 0.1);
     z-index: 2;
+    border-radius: 0.5rem 0.5rem 0 0;
+    padding: 1rem;
 }
+
 .active {
     display: block;
+    border-radius: 0.5rem;
+    background-color: $turquoise;
+
+    .option {
+        border-radius: 0.5rem;
+        font-size: 1.75rem;
+        color: rgba(white, 0.95);
+    }
 }
+
+.options {
+    font-size: 1.5rem;
+    border-bottom: 1px solid rgba(black, 0.1);
+    border-radius: 0 0 0.5rem 0.5rem;
+    box-shadow: 0 0.2rem 0.4rem rgba(black, 0.2);
+    color: rgba(black, 0.85);
+    max-height: 100rem;
+    transition: 0.3s ease-in-out;
+
+    .option {
+        background-color: white;
+        color: rgba($dark, $alpha: 0.85);
+    }
+
+    .option:not(:first-child) {
+        border-top: 1px solid rgba(black, 0.1);
+    }
+
+    .option:last-child {
+        border-radius: 0 0 0.5rem 0.5rem;
+    }
+}
+
 
 .option {
     padding: 1rem;
+    color: white;
+    transition: 0.3s ease-in-out;
 
     &:hover {
-        background-color: rgba(0,0,0,0.3);
+        background-color: $lightTurquoise;
+        color: rgba($dark, 0.95);
     }
+}
+
+@media only screen and (min-width: 1000px) {
+    :host {
+        max-width: calc(40% - 4rem);
+        position: sticky;
+        bottom: 50%;
+        left: 2rem;
+        border-radius: 0.5rem;
+        top: 2rem;
+        height: fit-content;
+
+    }
+
+    :host([inView]) {
+        transform: translateY(0);
+    }
+
+    :host(:not([inView])) {
+        transition: 0.3s ease-in-out;
+        transform: translateY(0);
+    }
+
+    :host(:not([open])) .options {
+        max-height: 100rem;
+    }
+
+    :host(:not([open])) .options .option{
+        visibility: visible;
+    }
+
+    .wrapper {
+        background-color: unset;
+        padding: 0;
+        border-radius: 0.5rem;
+    }
+
 }
