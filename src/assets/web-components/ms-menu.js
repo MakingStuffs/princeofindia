@@ -1,15 +1,16 @@
 import {
     msCreate,
     msAppend,
-    msQuery
+    msQuery,
+    msQueryAll
 } from "making-stuffs-queries";
 import menuCSS from './sass/menu.ce.scss';
 import sectionCSS from './sass/sections.ce.scss';
 import itemCSS from './sass/items.ce.scss';
 import navCSS from './sass/nav.ce.scss';
-import menu from '../json/menu.json';
+import menu from './json/menu.json';
 
-/* global HTMLElement customElements window document*/
+/* global HTMLElement customElements window IntersectionObserver */
 
 class msMenu extends HTMLElement {
     constructor() {
@@ -21,6 +22,7 @@ class msMenu extends HTMLElement {
 
     connectedCallback() {
         if (this.isConnected) {
+            msMenu.prototype.elem = this;
             this.nav = msCreate('ms-menu-nav');
             const style = msCreate('style');
             const wrapper = msCreate('div', {
@@ -65,20 +67,47 @@ class msMenuNav extends msMenu {
             class: 'wrapper'
         });
         msAppend([this.wrapper], this.shadowRoot);
-
-        const allElems = document.querySelectorAll('*');
-        for(let elem of allElems) {
-            if(window.getComputedStyle(elem, null).getPropertyValue('position') === 'fixed') {
-                this.wrapper.style.top = `${elem.offsetHeight}px`;
-            }
-        }
         
         this.menuToggle = this.menuToggle.bind(this);
+        this.setTop = this.setTop.bind(this);
         this.changeSelection = this.changeSelection.bind(this);
+        this.addOptionListeners = this.addOptionListeners.bind(this);
+
+        const options = {
+            root: null,
+            threshold: 0.1,
+            rootMargin: '0px'
+        }
+
+        const target = super.elem;
+        const callback = (entries) => {
+            entries.forEach(entry => { 
+                if(entry.isIntersecting) {
+                    this.inView = true;
+                } else {
+                    this.inView = false;
+                }
+            });
+        }
+
+        const observer = new IntersectionObserver(callback, options);
+
+        observer.observe(target);
+
+        window.addEventListener('resize', () => {
+            if(window.innerWidth < 1000) {
+                this.activeDiv.addEventListener('click', this.menuToggle);
+                this.style.top = 'unset';
+                this.style.bottom = 0;
+            } else {
+                this.addOptionListeners();
+                this.setTop();
+            }
+        }, {passive: true});
     }
 
     static get observedAttributes() {
-        return ['open'];
+        return ['open', 'inView'];
     }
 
     attributeChangedCallback(attr, oldValue, newValue) {
@@ -99,6 +128,18 @@ class msMenuNav extends msMenu {
         }
     }
 
+    get inView() {
+       return this.hasAttribute('inView')
+    }
+
+    set inView(isInView) {
+        if(isInView) {
+            this.setAttribute('inView', '');
+        } else {
+            this.removeAttribute('inView');
+        }
+    }
+
     connectedCallback() {
         if (this.isConnected) {
             this.options = this.getAttribute('links').split(',');
@@ -108,8 +149,6 @@ class msMenuNav extends msMenu {
             this.activeDiv = msCreate('div', {
                 class: 'active'
             });
-
-            this.activeDiv.addEventListener('click', this.menuToggle);
             msAppend([this.activeDiv, this.optionsDiv], this.wrapper);
 
             this.options.forEach((option, i) => {
@@ -124,45 +163,83 @@ class msMenuNav extends msMenu {
                     msAppend([elem], this.optionsDiv);
                 }
             });
+
+            return window.innerWidth < 1000 ?
+            (this.activeDiv.addEventListener('click', this.menuToggle),
+            this.addOptionListeners()) :
+            (this.open = true, this.addOptionListeners(), this.setTop());
         }
     }
 
     disconnectedCallback() {
+        window.removeEventListener('resize', () => {
+            if(window.innerWidth < 1000) {
+                this.activeDiv.addEventListener('click', this.menuToggle);
+                this.style.top = 'unset';
+                this.style.bottom = 0;
+            } else {
+                this.addOptionListeners();
+                this.setTop();
+            }
+        }, {passive: true});
     }
 
     changeSelection(e) {
-        let newElem = msQuery(`ms-menu-section[name="${e.target.getAttribute('name')}"]`, this.parentElement);
-        let curElem = msQuery(`ms-menu-section[active]`, this.parentElement);
-        let curNavItem = msQuery('.option', this.activeDiv);
-        let newNavItem = msQuery(`[name="${e.target.getAttribute('name')}"]`, this.optionsDiv);
+        const newElem = msQuery(`ms-menu-section[name="${e.target.getAttribute('name')}"]`, this.parentElement);
+        const curElem = msQuery(`ms-menu-section[active]`, this.parentElement);
+        const curNavItem = msQuery('.option', this.activeDiv);
+        const newNavItem = msQuery(`[name="${e.target.getAttribute('name')}"]`, this.optionsDiv);
         
         this.activeDiv.appendChild(newNavItem);
         this.optionsDiv.appendChild(curNavItem);
 
         curElem.active = false;
         newElem.active = true;
+        
         this.open = false;
-
+        
         this.activeDiv.firstElementChild.onclick = null;
+
+        return this.addOptionListeners(), this.scrollToPosition();
     }
 
-    menuToggle() {
+    scrollToPosition() {
+        const windowY = window.pageYOffset;
+        const menuY = msQuery('ms-menu').getBoundingClientRect().top;
+        const scrollTo = (windowY + menuY) - 60;
+        return window.scrollTo(0, scrollTo);
+    }
+
+    menuToggle() {        
         if (!this.open) {
             this.open = true;
-            this.optionsDiv.childNodes.forEach(node => {
-                if(!node.onclick) {
-                    node.onclick = this.changeSelection;
-                }
-            });
         } else {
             this.open = false;
         }
+    }
+
+    addOptionListeners() {
+        this.optionsDiv.childNodes.forEach(node => {
+            if(!node.onclick) {
+                node.onclick = this.changeSelection;
+            }
+        });
+    }
+
+    setTop() {
+        const elems = msQueryAll('*');
+        elems.forEach(elem => {
+            if(window.getComputedStyle(elem, true).getPropertyValue('position') === 'fixed') {
+                this.style.top = `${elem.offsetHeight + 20}px`;
+            }
+        })
     }
 }
 
 class msMenuSection extends msMenu {
     constructor() {
         super();
+        this.createItems = this.createItems.bind(this);
     }
     static get observedAttributes() {
         return ['active'];
@@ -214,20 +291,18 @@ class msMenuSection extends msMenu {
                 }
             });
 
-            for (let dishObj of dishes[0].items) {
-                const dishElem = msCreate('ms-menu-item');
-                for (let attr in dishObj) {
-                    dishElem.setAttribute(attr, dishObj[attr]);
-                }
-                msAppend([dishElem], this.wrapper);
-            }
-
-
+            return this.createItems(dishes);
         }
     }
 
-    disconnectedCallback() {
-
+    createItems(dishes) {
+        for (let dishObj of dishes[0].items) {
+            const dishElem = msCreate('ms-menu-item');
+            for (let attr in dishObj) {
+                dishElem.setAttribute(attr, dishObj[attr]);
+            }
+            msAppend([dishElem], this.wrapper);
+        }
     }
 }
 
@@ -237,6 +312,8 @@ class msMenuItem extends msMenuSection {
         const style = msCreate('style');
         style.innerHTML = itemCSS.toString();
         this.shadowRoot.appendChild(style);
+
+        this.buildElements = this.buildElements.bind(this);
     }
 
     connectedCallback() {
@@ -250,84 +327,84 @@ class msMenuItem extends msMenuSection {
                 class: 'attr-row'
             });
 
-            for (let attr of this.attributes) {
-                switch (attr.name) {
-                    case 'name':
-                        var heading = msCreate('h3');
-                        heading.innerHTML = attr.value;
-                        this.wrapper.prepend(heading);
-                        break;
-                    case 'description':
-                        var desc = msCreate('p');
-                        desc.innerHTML = attr.value;
-                        msAppend([desc], this.wrapper);
-                        break;
-                    case 'price':
-                        var price = msCreate('p', {
-                            class: 'price'
-                        });
-                        price.innerHTML = attr.value;
-                        msAppend([price], this.wrapper);
-                        break;
-                    case 'taste':
-                        var tasteRow = msCreate('div', {
-                            class: 'taste-row'
-                        });
-                        var tasteHead = msCreate('h4');
-                        tasteHead.innerHTML = 'Heat:';
-                        msAppend([tasteHead], tasteRow);
-                        msAppend([tasteRow], this.attrRow);
-                        var taste = msCreate('span', {
-                            class: `taste ${attr.value.toLowerCase()}`
-                        });
-                        taste.innerHTML = attr.value;
-                        msAppend([taste], tasteRow);
-                        break;
-                    case 'diet':
-                        var dietRow = msCreate('div', {
-                            class: 'diet-row'
-                        });
-                        var dietHead = msCreate('h4');
-                        dietHead.innerHTML = 'Dietary Notes:';
-                        msAppend([dietHead], dietRow);
-                        msAppend([dietRow], this.attrRow);
-                        (attr.value).split(',').forEach(option => {
-                            var opt = msCreate('span', {
-                                class: `diet ${option.toLowerCase()}`
-                            });
-                            opt.innerHTML = option;
-                            msAppend([opt], dietRow);
-                        });
-                        break;
-                    case 'options':
-                        var optRow = msCreate('div', {
-                            class: 'options-row'
-                        });
-                        var optHead = msCreate('h4');
-                        optHead.innerHTML = 'Options:';
-                        msAppend([optHead], optRow);
-                        msAppend([optRow], this.attrRow);
-                        (attr.value).split(',').forEach(option => {
-                            var opt = msCreate('span', {
-                                class: `option ${option.toLowerCase()}`
-                            });
-                            opt.innerHTML = option;
-                            msAppend([opt], optRow);
-                        });
-                        break;
-                    default:
-                        break;
-                }
-            }
-
             msAppend([this.attrRow], this.wrapper);
             msAppend([this.wrapper], this.shadowRoot);
 
+            return this.buildElements();
+            
         }
     }
 
-    disconnectedCallback() {
-
+    buildElements() {
+        for (let attr of this.attributes) {
+            switch (attr.name) {
+                case 'name':
+                    var heading = msCreate('h3');
+                    heading.innerHTML = attr.value;
+                    this.wrapper.prepend(heading);
+                    break;
+                case 'description':
+                    var desc = msCreate('p');
+                    desc.innerHTML = attr.value;
+                    msAppend([desc], this.wrapper);
+                    break;
+                case 'price':
+                    var price = msCreate('p', {
+                        class: 'price'
+                    });
+                    price.innerHTML = attr.value;
+                    msAppend([price], this.wrapper);
+                    break;
+                case 'taste':
+                    var tasteRow = msCreate('div', {
+                        class: 'taste-row'
+                    });
+                    var tasteHead = msCreate('h4');
+                    tasteHead.innerHTML = 'Heat:';
+                    msAppend([tasteHead], tasteRow);
+                    msAppend([tasteRow], this.attrRow);
+                    var taste = msCreate('span', {
+                        class: `taste ${attr.value.toLowerCase()}`
+                    });
+                    taste.innerHTML = attr.value;
+                    msAppend([taste], tasteRow);
+                    break;
+                case 'diet':
+                    var dietRow = msCreate('div', {
+                        class: 'diet-row'
+                    });
+                    var dietHead = msCreate('h4');
+                    dietHead.innerHTML = 'Dietary Notes:';
+                    msAppend([dietHead], dietRow);
+                    msAppend([dietRow], this.attrRow);
+                    (attr.value).split(',').forEach(option => {
+                        var opt = msCreate('span', {
+                            class: `diet ${option.toLowerCase()}`
+                        });
+                        opt.innerHTML = option;
+                        msAppend([opt], dietRow);
+                    });
+                    break;
+                case 'options':
+                    var optRow = msCreate('div', {
+                        class: 'options-row'
+                    });
+                    var optHead = msCreate('h4');
+                    optHead.innerHTML = 'Options:';
+                    msAppend([optHead], optRow);
+                    msAppend([optRow], this.attrRow);
+                    (attr.value).split(',').forEach(option => {
+                        var opt = msCreate('span', {
+                            class: `option ${option.toLowerCase()}`
+                        });
+                        opt.innerHTML = option;
+                        msAppend([opt], optRow);
+                    });
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
 
