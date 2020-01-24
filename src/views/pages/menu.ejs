@@ -21,19 +21,19 @@
   <%- include ('../templateParts/nav-bar.ejs') %>
   <%- include('../templateParts/header.ejs', {title: 'Menu'}) %>
   <main id="main">
+    <div class="section-heading">
+      <h3>Our <span class="txt-orange">Menu</span></h3>
+      <p class="txt-2rem">Below you can find our full restaurant menu. All items listed are available to eat in our
+        restaurant, or for takeout. If you have dietary requirements inform a member of staff.</p>
+    </div>
     <section id="menu">
-      <div class="section-heading">
-        <h3>Our <span class="txt-orange">Menu</span></h3>
-        <p class="txt-2rem">Below you can find our full restaurant menu. All items listed are available to eat in our
-          restaurant, or for takeout. If you have dietary requirements inform a member of staff.</p>
-      </div>
       <div class="announcement-banner">
         <h4>Takeout Discount</h4>
         <p>We are currently offering a generous discount on takeout orders which are collected from our restaurant.
         </p>
         <div class="flex-row">
-          <a href="./offers">Special Offers</a>
-          <a href="./booking">Reservations</a>
+          <a href="./offers" class="button">Special Offers</a>
+          <a href="./booking" class="button">Reservations</a>
         </div>
       </div>
       <ms-menu></ms-menu>
