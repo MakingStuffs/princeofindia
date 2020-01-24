@@ -1,6 +1,6 @@
 import {msQueryAll, msQuery} from 'making-stuffs-queries';
 
-const elems = msQueryAll('.about-block');
+const elems = msQueryAll('.slidable');
 elems.forEach(elem => {
     elem.addEventListener('click', elemSlide);
     elem.addEventListener('keydown', elemSlide);
