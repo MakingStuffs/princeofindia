@@ -26,4 +26,28 @@ module.exports = function(app, compiler) {
             }
         });
     });
+
+    app.get('/about', (req, res) => {
+        compiler.outputFileSystem.readFile(path.resolve(__dirname, '../../dist/', 'about.html'), (err, result) => {
+            if (err) {
+                console.log(err)
+            } else {
+                res.set('content-type', 'text/html')
+                res.send(result)
+                res.end()
+            }
+        });
+    });
+
+    app.get('/takeout', (req, res) => {
+        compiler.outputFileSystem.readFile(path.resolve(__dirname, '../../dist/', 'takeout.html'), (err, result) => {
+            if (err) {
+                console.log(err)
+            } else {
+                res.set('content-type', 'text/html')
+                res.send(result)
+                res.end()
+            }
+        });
+    });
 }
