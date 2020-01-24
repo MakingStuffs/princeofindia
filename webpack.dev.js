@@ -96,9 +96,6 @@ module.exports = merge(common, {
                 test: /\.ejs$/,
                 use: ['html-loader', {
                     loader: 'ejs-html-loader',
-                    options: {
-                        menu: require('./src/assets/json/menu.json')
-                    }
                 }]
             },
             {
@@ -133,11 +130,14 @@ module.exports = merge(common, {
         new HtmlWebpackPlugin({
             template: './src/views/pages/menu.ejs',
             filename: './menu.html',
-            options: {
-                menu: {
-                    menu: 'hey'
-                },
-            }
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/views/pages/about.ejs',
+            filename: './about.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/views/pages/takeout.ejs',
+            filename: './takeout.html',
         }),
         new ExtractCssChunksPlugin({
             filename: 'assets/css/[name].css',
