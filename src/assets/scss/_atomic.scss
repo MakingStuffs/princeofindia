@@ -21,3 +21,20 @@
     display: flex;
     flex-flow: row wrap;
 }
+.flex-column {
+    display: flex;
+    flex-flow: column;
+}
+
+.button {
+    padding: 1rem;
+    background: linear-gradient(45deg, $turquoise 50%, $darkTurquoise 50%) bottom left / 310% 210% no-repeat;
+    transition: 0.3s ease-in-out;
+    color: white;
+    font-family: 'Prince Body';
+    font-size: 1.5rem;
+
+    &:hover {
+        background-position: bottom right;
+    }
+}
