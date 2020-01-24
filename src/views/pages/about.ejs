@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="description"
+    content="We are a traditional, family run, Indian restaurant which serves curries from north and south India. We have a fully licensed bar and provide table service, takeout, catering and a lunch buffet.">
+  <meta name="keywords"
+    content="traditional curry, indian food, indian takeout, indian restaurant burlington, curry in burlington, traditional, indian, restaurant, takeout, india">
+  <meta name="twitter:title" content="Prince of India | Traditional Indian Cuisine | About Us">
+  <meta name="twitter:description"
+    content="We are a traditional, family run, Indian restaurant which serves curries from north and south India. We have a fully licensed bar and provide table service, takeout, catering and a lunch buffet.">
+  <meta property="og:title" content="Prince of India | Traditional Indian Cuisine | About Us">
+  <meta property="og:url" content="https://princeofindia.restaurant/about">
+  <meta property="og:description"
+    content="We are a traditional, family run, Indian restaurant which serves curries from north and south India. We have a fully licensed bar and provide table service, takeout, catering and a lunch buffet.">
+  <%- include('../templateParts/head-meta.ejs') %>
+  <title>Prince of India | Traditional Indian Cuisine | About Us</title>
+</head>
+
+<body>
+  <%- include ('../templateParts/nav-bar.ejs') %>
+  <%- include('../templateParts/header.ejs', {title: 'Menu'}) %>
+  <main id="main">
+    <section id="about">
+      <div class="section-heading">
+        <h3>About <span class="txt-orange">Us</span></h3>
+        <p>Want to find out more about Prince of India? You're in the right place!</p>
+      </div>
+      <div class="about-row">
+        <div class="about-block" tabindex="0" aria-label="familyLabel">
+          <div class="image"></div>
+          <div class="text">
+            <h4 id="familyLabel">Family Owned</h4>
+            <div class="content">
+              <p>
+                Prince of India is a family owned chain of traditional Indian restaurants. We have been serving
+                authentic
+                Indian cuisine for over two decades and have restaurants in three continents (Asia, Europe and America).
+              </p>
+              <p>
+                Our passion for providing our guests with an opportunity to share a true Indian dining experience,
+                combined with our love for sharing our nation's unique mixes of spices and mouth-watering flavours, has
+                been a driving force in our brand's international success.
+              </p>
+              <p>
+                All of our restaurants serve a full menu of Indian foods, which include: curries, rice dishes, breads,
+                starters,
+                salads and deserts. We also provide a full drinks menu, with hot, cold and alcoholic drinks, and cater
+                to
+                all dietary requirements.
+              </p>
+              <p>
+                The food served in our restaurants is pork and beef free, and combines a mix of secret family recipes
+                with
+                traditional Indian favorites.
+              </p>
+            </div>
+            <a href="./contact" title="Prince of India, contact us" class="button center-x margin-y-15rem bg-mustard">
+              <i class="fas fa-envelope-square"></i>
+              Contact Us
+            </a>
+          </div>
+        </div>
+        <div class="about-block" tabindex="0" aria-label="rootsLabel">
+          <div class="image"></div>
+          <div class="text left">
+            <h4 id="rootsLabel">Traditional Roots</h4>
+            <div class="content">
+              <p>
+                Our family was started in a rural farming village in the north western Indian state of Punjab. Punjab is
+                the state in which the Sikh religion was originally formed and is a state which spans across both India
+                and Pakistan.
+              </p>
+              <p>
+                Punjabi cuisine is one of the most favored within the Indian sub-continent, famed for its unique mix of
+                bold flavors, intricate spice blends and fresh ingredients.
+              </p>
+              <p>
+                As with many people from our home village, our family has deep roots in the farming industry and has
+                been
+                growing fresh fruit, vegetables, rice and grains for generations.
+              </p>
+              <p>
+                Having such a deep rooted connection with the base ingredients to the food we prepare has instilled a
+                close relationship between our family and the we prepare, cook and serve to our guests. Whether we are
+                preparing food in our restaurant kitchen or for family members in our home we always ensure the same
+                love and attention goes into it.
+              </p>
+            </div>
+            <a href="./locations" title="Prince of India's international branches"
+              class="button center-x margin-y-15rem bg-mustard">
+              <i class="fas fa-map-signs"></i>
+              Other Locations
+            </a>
+          </div>
+        </div>
+        <div class="about-block" tabindex="0" aria-labelledby="richLabel">
+          <div class="image"></div>
+          <div class="text left">
+            <h4 id="richLabel">Rich Tradition</h4>
+            <div class="content">
+              <p>
+                Eating is one of the main parts of Indian culture. Within a large percentage of Indian family homes
+                every meal is celebrated and served with the utmost care. Everyday family members will sit down together
+                and eat an careful made selection of curries, breads, grains and salads.
+              </p>
+              <p>
+                At the the end of every meal it is traditional in India to have a sweet cup of hot masala chai (tea)
+                which combines the favored English black tea leaf with stewed milk and aromatics indian spices. It is
+                also very common to have a desert such as mango kulfi, or some traditional sweets, with your chai.
+              </p>
+              <p>
+                This sense of taking great care with every meal is something which has been bred into our family and we
+                have, in turn, bred it into the Prince of India brand. Our chefs are highly skilled and trained to
+                prepare authentic dishes as if our guests were members of our family.
+              </p>
+            </div>
+            <a href="./locations" title="Prince of India's international branches"
+              class="button center-x margin-y-15rem bg-mustard">
+              <i class="fas fa-map-signs"></i>
+              Other Locations
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <%- include ('../templateParts/footer.ejs') %>
+</body>
+
+</html>
