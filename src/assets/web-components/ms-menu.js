@@ -327,7 +327,6 @@ class msMenuItem extends msMenuSection {
                 class: 'attr-row'
             });
 
-            msAppend([this.attrRow], this.wrapper);
             msAppend([this.wrapper], this.shadowRoot);
 
             return this.buildElements();
@@ -404,6 +403,7 @@ class msMenuItem extends msMenuSection {
                 default:
                     break;
             }
+            msAppend([this.attrRow], this.wrapper);
         }
     }
 }
