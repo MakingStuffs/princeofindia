@@ -14,23 +14,24 @@
   <meta property="og:description"
     content="Take advantage of our generous special offers and enjoy our traditional Indian curry at a discounted price.">
   <title>Prince of India | Traditional Indian Cuisine | Special Offers</title>
-  <%- include("../templateParts/head-meta.ejs"); %>
+  <%- include src/views/templateParts/head-meta.ejs %>
 </head>
 
 <body>
-  <%- include('../templateParts/nav-bar.ejs'); %>
-  <%- include('../templateParts/header.ejs'); %>
+  <%- include src/views/templateParts/nav-bar.ejs %>
+  <%- include src/views/templateParts/header.ejs %>
   <main id="main">
+    <div class="section-heading">
+      <h3>Special <span class="txt-orange">Offers</span></h3>
+      <p>Have a look at our current special offers and sign-up to our mailing list. Members of our mailing list
+        receive exclusive discounts which are not listed publicly.</p>
+    </div>
     <section id="offers">
-      <div class="section-heading">
-        <h3>Special <span class="txt-orange">Offers</span></h3>
-        <p>Have a look at our current special offers and sign-up to our mailing list. Members of our mailing list
-          receive exclusive discounts which are not listed publicly.</p>
-      </div>
-      <div class="offers">
-        <div id="buffetOffer" class="offer buffet shrinkable">
-          <h4>Lunch Buffet</h4>
-          <div class="offer-text shrink-this shrink">
+      <div class="slide-row">
+        <div class="slide-block slidable">
+          <div class="image" style="background-image: url('<%- require('../../assets/img/indian-buffet-service.jpg') %>');"></div>
+          <div class="text">
+            <h4>Lunch Buffet</h4>
             <p>
               <strong>
                 Mon to Sat: 11:30 am to 14:30 pm
@@ -48,21 +49,22 @@
               Within our buffet you can expect to find a generous variety of our traditional curies, fresh salad, rice,
               dips and a type of traditional Indian bread.
             </p>
-            <a href="./booking">
+            <a href="./booking" class="button">
               <strong>
                 Reservations
               </strong>
             </a>
-            <a href="./menu">
+            <a href="./menu" class="button">
               <strong>
                 Menu
               </strong>
             </a>
           </div>
         </div>
-        <div id="collectionOffer" class="offer collection shrinkable">
-          <h4>Takeout Offer</h3>
-          <div class="offer-text shrink-this shrink">
+        <div class="slide-block slidable">
+          <div class="image" style="background-image: url('<%- require('../../assets/img/takeout-offer.jpg') %>');"></div>
+          <div class="text">
+            <h4>Takeout Offer</h3>
             <p>
               <strong>
                 10% Off Takeout Orders!
@@ -78,21 +80,22 @@
             <p>
               Please note that this discount does not apply to drinks.
             </p>
-            <a href="tel:905-333-1331">
+            <a href="tel:905-333-1331" class="button">
               <strong>
                 Call Us
               </strong>
             </a>
-            <a href="./menu">
+            <a href="./menu" class="button">
               <strong>
                 Menu
               </strong>
             </a>
           </div>
         </div>
-        <div id="takeoutOffer" class="offer takeout shrinkable">
-          <h4>Evening Takeout Offer</h4>
-          <div class="offer-text shrink-this shrink">
+        <div class="slide-block slidable">
+          <div class="image" style="background-image: url('<%- require('../../assets/img/curry-and-rice.jpg') %>');"></div>
+          <div class="text">
+            <h4>Evening Takeout Offer</h4>
             <p>
               <strong>
                 15% Off Takeout Orders Between 3pm and 6pm!
@@ -108,12 +111,12 @@
             <p>
               Please note that this discount does not apply to drinks.
             </p>
-            <a href="tel:905-333-1331">
+            <a href="tel:905-333-1331" class="button">
               <strong>
                 Call Us
               </strong>
             </a>
-            <a href="./menu">
+            <a href="./menu" class="button">
               <strong>
                 Menu
               </strong>
@@ -123,7 +126,7 @@
       </div>
     </section>
   </main>
-  <%- include('../templateParts/footer.ejs'); %>
+  <%- include src/views/templateParts/footer.ejs %>
 </body>
 
 </html>

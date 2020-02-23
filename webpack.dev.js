@@ -11,6 +11,7 @@ const postcssPresetenv = require('postcss-preset-env');
 module.exports = merge(common, {
     mode: 'development',
     entry: [
+        '@babel/polyfill',
         'webpack-hot-middleware/client?path=/__webpack_hmr',
     ],
     target: 'web',
@@ -33,7 +34,8 @@ module.exports = merge(common, {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env']
+                        presets: ['@babel/preset-env'],
+                        plugins: ['@babel/plugin-transform-runtime']
                     },
                 }
             },
@@ -78,7 +80,8 @@ module.exports = merge(common, {
                             sourceMap: 'inline'
                         },
                     },
-                    'sass-loader']
+                    'sass-loader'
+                ]
             },
             {
                 test: /\.(ttf|woff|woff2|eot)/,
@@ -94,9 +97,7 @@ module.exports = merge(common, {
             },
             {
                 test: /\.ejs$/,
-                use: ['html-loader', {
-                    loader: 'ejs-html-loader',
-                }]
+                use: ['ejs-compiled-loader']
             },
             {
                 test: /\.(jpeg|jpg|svg|gif|png)/,
@@ -122,6 +123,7 @@ module.exports = merge(common, {
         new HtmlWebpackPlugin({
             template: './src/views/pages/index.ejs',
             filename: './index.html',
+            page: 'Burlington'
         }),
         new HtmlWebpackPlugin({
             template: './src/views/pages/offers.ejs',
@@ -138,6 +140,17 @@ module.exports = merge(common, {
         new HtmlWebpackPlugin({
             template: './src/views/pages/takeout.ejs',
             filename: './takeout.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/views/pages/booking.ejs',
+            filename: './booking.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/views/pages/locations.ejs',
+            filename: './locations.html',
+            page: 'Locations',
+            data: require('./src/assets/json/branches.js'),
+            
         }),
         new ExtractCssChunksPlugin({
             filename: 'assets/css/[name].css',

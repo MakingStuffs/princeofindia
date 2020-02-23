@@ -5,6 +5,7 @@
     box-shadow: 0.2rem 0.2rem 0.6rem rgba(black, 0.3);
     border-radius: 0.5rem;
     display: flex;
+    background-color: white;
 }
 
 :host(:not(.active)) {

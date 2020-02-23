@@ -1,0 +1,120 @@
+@import './colors.ce';
+@import './fonts.ce';
+@import './defaults.ce';
+@import './mediaQueries.ce';
+
+:host {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(black, 0.8);
+    z-index: 50;
+    opacity: 1;
+    transition: 0.3s ease-in-out;
+}
+:host(:not([open])) {
+    opacity: 0;
+}
+:host(:not([open])) .wrapper {
+    top: -100%;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Prince Body';
+}
+
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0.2rem 0.2rem 0.6rem rgba(black, 0.3);
+    transform: translate(-50%, -50%);
+    transition: 0.5s ease-in-out;
+    width: 90%;
+    height: 70%;
+    max-width: 50rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+}
+
+.heading {
+    background-color: $turquoise;
+    color: rgba(white, 0.95);
+    font-size: 2.5rem;
+    padding: 2rem;
+    margin: 0;
+    text-align: center;
+    border-radius: 0.5rem;
+    max-width: 80%;
+    font-family: 'Prince Title';
+
+    p {
+        font-family: 'Prince Title';
+        margin: 0;
+    }
+}
+
+.content {
+    overflow-y: scroll;
+    width: 100%;
+    text-align: center;
+    border: 0.1rem solid rgba(black, 0.1);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    max-height: 60%;
+    background-color: rgba($turquoise, 0.02);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+        background-color: rgba($lightTurquoise, 0.8);
+    }
+}
+
+address {
+    margin: 2rem;
+}
+
+button, .button {
+    padding: 1rem;
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 0.3rem;
+    background-color: $lightTurquoise;
+    color: black;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    font-size: 1.5rem;
+    width: 100%;
+    display: block;
+
+    &:hover {
+        background-color: $turquoise;
+        color: white;
+    }
+}
+
+.close {
+    background-color: $red;
+    color: white;
+    opacity: 0.3;
+
+    &:hover {
+        background-color: $red;
+        opacity: 1;
+    }
+}

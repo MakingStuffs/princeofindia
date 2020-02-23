@@ -4,6 +4,7 @@ html {
 
 * {
  box-sizing: border-box;
+ hyphens: auto;
 }
 
 body {
@@ -23,5 +24,5 @@ footer {
 
 section {
     padding: 2rem 0;
-    background-color: rgba($lightTurquoise, 0.15);
+    background-color: rgba($orange, 0.05);
 }

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-GB" dir="ltr">
+
+<head>
+  <meta name="description"
+    content="Indian spices have been known to have many uses and benefits for thousands of years. Have a read about some of the more popular spices used in traditional Indian cooking.">
+  <meta name="keywords" content="indian spices, indian curry spices, indian food, food, indian, curry spices, spices">
+  <meta name="twitter:title" content="Prince of India | Traditional Indian Cuisine | Indian Spices">
+  <meta name="twitter:description"
+    content="Indian spices have been known to have many uses and benefits for thousands of years. Have a read about some of the more popular spices used in traditional Indian cooking.">
+  <meta property="og:title" content="Prince of India | Traditional Indian Cuisine | Indian Spices">
+  <meta property="og:url" content="princeofindia.restaurant/spices">
+  <meta property="og:description"
+    content="Indian spices have been known to have many uses and benefits for thousands of years. Have a read about some of the more popular spices used in traditional Indian cooking.">
+  <%- include src/views/templateParts/head-meta.ejs %>
+  <title>Prince of India | Traditional Indian Cuisine | International Branches</title>
+</head>
+
+<body>
+  <%- include src/views/templateParts/nav-bar.ejs %>
+  <%- include src/views/templateParts/header.ejs %>
+  <main id="main">
+    <div class="section-heading">
+      <h3>Other <span class="txt-orange">Locations</span></h3>
+      <p>We currently have branches in the following cities: Frankfurt, Stuttgart, Mannheim and Batala. You can find out
+        more information below.</p>
+    </div>
+    <section id="locations">
+      <div class="tile-row">
+        <% var branches = htmlWebpackPlugin.options.data.branches; %>
+        <% branches.forEach(function(branch){ %>
+        <div class="img-tile" style="background-image: url('<%= branch.image %>');">
+          <div class="content">
+            <h4><%= branch.city %></h4>
+          </div>
+          <div class="template">
+            <div class="heading">
+              <p><%= branch.city %> </p>
+            </div>
+            <div class="content">
+              <address>
+                <%- branch.address %>
+              </address>
+              <a href="tel:<%= branch.phone %>" title="Call Prince of India in <%= branch.city %>">
+                <%= branch.phone %>
+              </a>
+              <br>
+              <a href="<%= branch.website %>" title="<%= branch.city %>'s website'" rel="noopener">Website</a>
+            </div>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    </section>
+  </main>
+  <%- include src/views/templateParts/footer.ejs %>
+</body>
+
+</html>

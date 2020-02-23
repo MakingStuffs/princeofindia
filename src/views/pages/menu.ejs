@@ -13,13 +13,13 @@
   <meta property="og:url" content="https://princeofindia.restaurant/takeout">
   <meta property="og:description"
     content="Here you can find the takeout menu for our traditional indian restaurant in Burlington, Ontario. It features a wide selection of our Indian curries and sides.">
-  <%- include('../templateParts/head-meta.ejs') %>
+  <%- include src/views/templateParts/head-meta.ejs %>
   <title>Prince of India | Traditional Indian Cuisine | Menu</title>
 </head>
 
 <body>
-  <%- include ('../templateParts/nav-bar.ejs') %>
-  <%- include('../templateParts/header.ejs', {title: 'Menu'}) %>
+  <%- include  src/views/templateParts/nav-bar.ejs %>
+  <%- include src/views/templateParts/header.ejs %>
   <main id="main">
     <div class="section-heading">
       <h3>Our <span class="txt-orange">Menu</span></h3>
@@ -39,7 +39,7 @@
       <ms-menu></ms-menu>
     </section>
   </main>
-  <%- include ('../templateParts/footer.ejs') %>
+  <%- include src/views/templateParts/footer.ejs %>
 </body>
 
 </html>

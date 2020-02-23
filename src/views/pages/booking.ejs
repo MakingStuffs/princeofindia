@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="description" content="Use our booking form to reserve a table at our traditional Indian restaurant in Burlington, Ontario.">
+    <meta name="keywords" content="traditional curry, indian food, indian takeout, indian restaurant burlington, curry in burlington, traditional, indian, restaurant, takeout, india">
+    <meta name="twitter:title" content="Prince of India | Traditional Indian Cuisine | Reservations">
+    <meta name="twitter:description" content="Use our booking form to reserve a table at our traditional Indian restaurant in Burlington, Ontario.">
+    <meta property="og:title" content="Prince of India | Traditional Indian Cuisine | Reservations">
+    <meta property="og:url" content="https://princeofindia.restaurant/contact">
+    <meta property="og:description" content="Use our booking form to reserve a table at our traditional Indian restaurant in Burlington, Ontario.">
+    <%- include src/views/templateParts/head-meta.ejs %>
+    <title>Prince of India | Traditional Indian Cuisine | Reservations</title>
+  </head>
+  <body>
+    <%- include src/views/templateParts/nav-bar.ejs %>
+    <%- include src/views/templateParts/header.ejs %>
+    <main id="main">
+      <div class="section-heading">
+        <h3>Book a <span class="txt-orange">Table</span></h3>
+        <p>Use the form below to make a reservation. Alternatively, you can give us a call on: 905-333-1331</p>
+      </div>
+      <section id="contact" class="no-pad">
+        <ms-booking name="booking" action="http://localhost:6001/booking" method="POST" enctype="application/json">
+          <div class="template">
+              <ms-booking-slide data-index="0"  data-type="slide" active>
+                <div class="wrapper">
+                  <p class="heading">Book a table</p>
+                  <p>So you'd like to book a table? Great! Click the button below to get started.</p>
+                  <button data-action="next">Next</button>
+                </div>
+              </ms-booking-slide>
+              <ms-booking-slide data-index="1" data-type="input">
+                <div class="wrapper">
+                  <label id="firstNameLabel" for="firstName">What's your first name?</label>
+                  <input id="firstName" aria-labelledby="firstNameLabel" type="text" name="firstName" minlength="3" />
+                  <button data-action="next">Next</button>
+                </div>
+              </ms-booking-slide>
+              <ms-booking-slide data-index="2" data-type="input">
+                <div class="wrapper">
+                  <label for="lastName" id="lastNameLabel">What's your last name?</label>
+                  <input id="lastName" aria-labelledby="lastNameLabel" type="text" name="lastName" minlength="3" />
+                  <button data-action="next">Next</button>
+                </div>
+              </ms-booking-slide>
+              <ms-booking-slide data-index="3" data-type="confirm">
+                <div class="wrapper">
+                  <p class="heading">Confirm your details</p>
+                  <p>Please take a moment to verify the details you have entered and amend any mistakes by clicking on the field. When you are done press the send button below.</p>
+                </div>
+              </ms-booking-slide>
+          </div>
+        </ms-booking>
+      </section>
+    </main>
+    <%- include src/views/templateParts/footer.ejs %>
+  </body>
+</html>

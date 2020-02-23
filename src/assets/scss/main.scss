@@ -51,6 +51,11 @@
     flex-flow: row wrap;
 }
 
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
 /* Reuseable classes */
 .section-heading {
     text-align: center;
@@ -78,6 +83,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-radius: 0.5rem;
     box-shadow: 0.2rem 0.2rem 0.4rem rgba(black, 0.3);
 
 
@@ -107,10 +113,61 @@
     .button {
         background: linear-gradient(45deg, $orange 50%, $lightTurquoise 50%) bottom left/310% 210% no-repeat;
         margin: 2rem;
+
         &:hover {
             background-position: bottom right;
             color: rgba(0, 0, 0, 0.85);
         }
+    }
+}
+
+.tile-row {
+    @include flex-row;
+    justify-content: space-evenly;
+    padding: 2rem;
+}
+
+.img-tile {
+    @include flex-column;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 50rem;
+    min-width: 30rem;
+    max-width: 60rem;
+    min-height: 40rem;
+    max-height: 50rem;
+    box-shadow: 0.2rem 0.2rem 0.6rem rgba(black, 0.3);
+    border-radius: 0.5rem;
+    background-color: $turquoise;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin: 1rem;
+
+    &:hover {
+        box-shadow: 0.2rem 0.2rem 0.6rem rgba(black, 0.5);
+    }
+
+    &:hover .content {
+        background-color: $turquoise;
+    }
+
+    &:active {
+        box-shadow: none;
+    }
+
+    .content {
+        font-size: 4rem;
+        color: white;
+        background-color: $orange;
+        box-shadow: 0.2rem 0.2rem 0.6rem rgba(black, 0.3);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        transition: 0.3s ease-in-out;
+        max-width: 70%;
+        text-align: center;
     }
 }
 
@@ -303,75 +360,12 @@
     padding-top: 5rem;
 }
 
-/* Offers */
-
-.offers {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-}
-
-.offer {
-    @include tile;
-
-    h4 {
-        background-color: $red;
-    }
-}
-
-.offer-text {
-    @include tile-text;
-    background-color: $red;
-}
-
-.offer.buffet {
-    background: url('../img/indian-buffet-service.jpg') center/cover no-repeat;
-}
-
-.offer.takeout {
-    background: url('../img/takeout-offer.jpg') center/cover no-repeat;
-}
-
-.offer.collection {
-    background: url('../img/curry-and-rice.jpg') center/cover no-repeat;
-}
-
-/* info section */
-.info-wrapper {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    padding: 1rem;
-}
-
-.info {
-    @include tile;
-
-    h4 {
-        background-color: $orange;
-    }
-}
-
-
-.info-text {
-    @include tile-text;
-}
-
-.info.bar {
-    background: url('../img/indian-bar.jpg') center/cover no-repeat;
-}
-
-.info.menu {
-    background: url('../img/indian-food.jpg') center/cover no-repeat;
-}
-
 /* Hero */
 .hero-image {
     width: 100vw;
     height: 100vh;
     position: relative;
     background-color: black;
-    margin: 2rem 0;
     overflow: hidden;
     z-index: 3;
     display: block;
@@ -420,56 +414,15 @@
     }
 }
 
-/* Services */
-.services {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 1rem 1rem 1rem;
-}
-
-.service {
-    @include tile;
-
-    h4 {
-        background-color: $red;
-    }
-}
-
-.service-text {
-    @include tile-text;
-    background-color: $red;
-}
-
-.service-text.shrink {
-    max-height: 0;
-    padding: 0;
-}
-
-.service.buffet {
-    background: url('../img/indian-buffet-service.jpg') center/cover no-repeat;
-}
-
-.service.takeout {
-    background: url('../img/indian-takeout-service.jpg') center/cover no-repeat;
-}
-
-.service.catering {
-    background: url('../img/indian-catering-service.jpg') center/cover no-repeat;
-}
-
-.service.alacarte {
-    background: url('../img/indian-a-la-carte-service.jpeg') center/cover no-repeat;
-}
-
 /* about */
 
-.about-row {
+.slide-row {
     @include flex-row;
     justify-content: space-evenly;
-    padding: 0 2rem;
+    padding: 5rem 2rem;
 }
 
-.about-block {
+.slide-block {
     display: flex;
     width: 90%;
     max-width: 54rem;
@@ -496,12 +449,13 @@
         background: url('../img/spices-generic-3.jpeg') center / cover no-repeat;
         width: 100%;
         flex: 1 1 40rem;
-        min-width: 30rem;
         min-height: 50vh;
         box-shadow: 0.2rem 0.2rem 0.6rem rgba(0, 0, 0, 0.2);
+        border-radius: 0.5rem;
     }
+
     .text {
-        min-width: 30rem;
+        border-radius: 0.5rem;
         max-width: 50rem;
         margin: -30% 2rem 4rem 2rem;
         font-size: 1.5rem;
