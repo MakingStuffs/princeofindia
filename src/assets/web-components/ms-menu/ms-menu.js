@@ -77,7 +77,7 @@ class msMenuNav extends msMenu {
             root: null,
             threshold: 0.1,
             rootMargin: '0px'
-        }
+        };
 
         const target = super.elem;
         const callback = (entries) => {
@@ -88,7 +88,7 @@ class msMenuNav extends msMenu {
                     this.inView = false;
                 }
             });
-        }
+        };
 
         const observer = new IntersectionObserver(callback, options);
 
@@ -129,7 +129,7 @@ class msMenuNav extends msMenu {
     }
 
     get inView() {
-       return this.hasAttribute('inView')
+       return this.hasAttribute('inView');
     }
 
     set inView(isInView) {
@@ -158,7 +158,7 @@ class msMenuNav extends msMenu {
                 elem.innerHTML = option;
                 elem.setAttribute('name', option);
                 if (i === 0) {
-                    msAppend([elem], this.activeDiv)
+                    msAppend([elem], this.activeDiv);
                 } else {
                     msAppend([elem], this.optionsDiv);
                 }
@@ -187,11 +187,11 @@ class msMenuNav extends msMenu {
     changeSelection(e) {
         const newElem = msQuery(`ms-menu-section[name="${e.target.getAttribute('name')}"]`, this.parentElement);
         const curElem = msQuery(`ms-menu-section[active]`, this.parentElement);
-        const curNavItem = msQuery('.option', this.activeDiv);
-        const newNavItem = msQuery(`[name="${e.target.getAttribute('name')}"]`, this.optionsDiv);
+        const newNavItem = msCreate('div', { class:'option', name: e.target.getAttribute('name') } );
         
+        newNavItem.innerHTML = e.target.getAttribute('name');
+        this.activeDiv.removeChild(this.activeDiv.lastChild);
         this.activeDiv.appendChild(newNavItem);
-        this.optionsDiv.appendChild(curNavItem);
 
         curElem.active = false;
         newElem.active = true;
@@ -232,7 +232,7 @@ class msMenuNav extends msMenu {
             if(window.getComputedStyle(elem, true).getPropertyValue('position') === 'fixed') {
                 this.style.top = `${elem.offsetHeight + 20}px`;
             }
-        })
+        });
     }
 }
 
