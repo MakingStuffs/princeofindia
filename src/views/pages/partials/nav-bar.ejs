@@ -1,0 +1,18 @@
+<nav class="nav-bar">
+    <div class="nav-logo">
+        <a href="/" class="india-font">Prince of India</a>
+    </div>
+    <ul class="nav-list">
+        <% const links = require('../../assets/json/nav.json') %>
+        <% links.navLinks.forEach(function(link) { %>
+        <li>
+            <a href="<%= link.href %>" title="<%= link.title %>">
+                <%= link.text %>
+            </a>
+        </li>
+        <% }) %>
+    </ul>
+    <div class="nav-responsive">
+        <i class="fas fa-bars"></i>
+    </div>
+</nav>
