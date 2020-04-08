@@ -27,7 +27,7 @@ class MsBooking extends HTMLElement {
             };
 
             style.innerHTML = mainSCSS.toString();
-            template.classList = 'wrapper'
+            template.classList = 'wrapper';
 
             this.shadow.appendChild(style);
             this.shadow.appendChild(template);
@@ -91,7 +91,7 @@ class MsBookingSlide extends MsBooking {
             this.shadowRoot.appendChild(this.wrapper);
             const buttons = msQueryAll('button', this.shadowRoot);
             buttons.forEach(button => {
-                button.addEventListener('click', this.boundClickHandler)
+                button.addEventListener('click', this.boundClickHandler);
             });
         }
     }
