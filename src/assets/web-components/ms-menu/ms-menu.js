@@ -191,15 +191,12 @@ class msMenuNav extends msMenu {
         this.activeDiv.firstElementChild.setAttribute('name', e.target.getAttribute('name'));
         this.activeDiv.firstElementChild.innerHTML = e.target.getAttribute('name');
 
-
         curElem.active = false;
         newElem.active = true;
         
         this.open = false;
         
-        this.activeDiv.firstElementChild.onclick = null;
-
-        return this.addOptionListeners(), this.scrollToPosition();
+        return this.scrollToPosition();
     }
 
     scrollToPosition() {
