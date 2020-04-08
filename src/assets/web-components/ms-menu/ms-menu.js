@@ -187,11 +187,10 @@ class msMenuNav extends msMenu {
     changeSelection(e) {
         const newElem = msQuery(`ms-menu-section[name="${e.target.getAttribute('name')}"]`, this.parentElement);
         const curElem = msQuery(`ms-menu-section[active]`, this.parentElement);
-        const newNavItem = msCreate('div', { class:'option', name: e.target.getAttribute('name') } );
-        
-        newNavItem.innerHTML = e.target.getAttribute('name');
-        this.activeDiv.removeChild(this.activeDiv.lastChild);
-        this.activeDiv.appendChild(newNavItem);
+
+        this.activeDiv.firstElementChild.setAttribute('name', e.target.getAttribute('name'));
+        this.activeDiv.firstElementChild.innerHTML = e.target.getAttribute('name');
+
 
         curElem.active = false;
         newElem.active = true;
