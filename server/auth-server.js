@@ -1,11 +1,11 @@
 require('dotenv').config({path: './.env'});
-import { body, validationResult } from 'express-validator';
-import { express } from 'express'; 
-import { cors } from 'cors';
-import { nodemailer } from 'nodemailer';
-import { fs } from 'fs';
-import { https } from 'https';
-import { helmet } from 'helmet';
+const {body, validationResult} = require('express-validator');
+const express = require('express'); 
+const cors = require('cors');
+const nodemailer = require('nodemailer');
+const fs = require('fs');
+const https = require('https');
+const helmet = require('helmet');
 const {
     AUTH_PORT,
     CAPTCHA_SECRET,
@@ -27,7 +27,7 @@ const sslOptions = {
     key: SSL_CERT,
     secret: SSL_KEY,
     passphrase: SSL_PW
-}
+};
 
 const httpsServer = https.createServer(sslOptions, app);
 
