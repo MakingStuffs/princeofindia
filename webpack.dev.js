@@ -1,21 +1,31 @@
 'use strict';
-/* global require module __dirname */
+require('dotenv').config({
+    path: './process.env'
+});
 const merge = require('webpack-merge');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractCssChunksPlugin = require('extract-css-chunks-webpack-plugin');
 const path = require('path');
-const webpack = require('webpack');
 const common = require('./webpack.common');
 const postcssPresetenv = require('postcss-preset-env');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractCssChunksPlugin = require('extract-css-chunks-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = merge(common, {
     mode: 'development',
-    entry: [
-        '@babel/polyfill',
-        'webpack-hot-middleware/client?path=/__webpack_hmr',
-    ],
+    entry: {
+        home: './src/assets/js/home.js',
+        about: './src/assets/js/about.js',
+        booking: './src/assets/js/booking.js',
+        contact: './src/assets/js/contact.js',
+        locations: './src/assets/js/locations.js',
+        menu: './src/assets/js/menu.js',
+        offers: './src/assets/js/offers.js',
+        spices: './src/assets/js/spices.js',
+        takeout: './src/assets/js/takeout.js',
+        terms: './src/assets/js/terms.js',
+    },
     target: 'web',
-    devtool: '#sourcemap',
+    devtool: 'eval-source-map',
     module: {
         rules: [{
                 enforce: "pre",
@@ -96,10 +106,6 @@ module.exports = merge(common, {
                 }]
             },
             {
-                test: /\.ejs$/,
-                use: ['ejs-compiled-loader']
-            },
-            {
                 test: /\.(jpeg|jpg|svg|gif|png)/,
                 use: [{
                     loader: 'file-loader',
@@ -119,38 +125,48 @@ module.exports = merge(common, {
         filename: 'assets/js/[name].[hash].js'
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
+        new BrowserSyncPlugin({
+            files: '**/*.ejs',
+            proxy: `http://localhost:${process.env.PORT}`
+        }),
         new HtmlWebpackPlugin({
-            template: './src/views/pages/index.ejs',
+            template: '!!ejs-webpack-loader!./src/views/pages/index.ejs',
             filename: './index.html',
-            page: 'Burlington'
+            page: 'Burlington',
+            chunks: ['home']
         }),
         new HtmlWebpackPlugin({
-            template: './src/views/pages/offers.ejs',
+            template: '!!ejs-webpack-loader!./src/views/pages/offers.ejs',
             filename: './offers.html',
+            chunks: ['offers']
         }),
         new HtmlWebpackPlugin({
-            template: './src/views/pages/menu.ejs',
+            template: '!!ejs-webpack-loader!./src/views/pages/menu.ejs',
             filename: './menu.html',
+            chunks: ['menu']
         }),
         new HtmlWebpackPlugin({
-            template: './src/views/pages/about.ejs',
+            template: '!!ejs-webpack-loader!./src/views/pages/about.ejs',
             filename: './about.html',
+            chunks: ['about']
         }),
         new HtmlWebpackPlugin({
-            template: './src/views/pages/takeout.ejs',
+            template: '!!ejs-webpack-loader!./src/views/pages/takeout.ejs',
             filename: './takeout.html',
+            chunks: ['takeout']
         }),
         new HtmlWebpackPlugin({
-            template: './src/views/pages/booking.ejs',
+            template: '!!ejs-webpack-loader!./src/views/pages/booking.ejs',
             filename: './booking.html',
+            chunks: ['booking']
         }),
         new HtmlWebpackPlugin({
-            template: './src/views/pages/locations.ejs',
+            template: '!!ejs-webpack-loader!./src/views/pages/locations.ejs',
             filename: './locations.html',
             page: 'Locations',
             data: require('./src/assets/json/branches.js'),
-            
+            chunks: ['locations']
+
         }),
         new ExtractCssChunksPlugin({
             filename: 'assets/css/[name].css',
