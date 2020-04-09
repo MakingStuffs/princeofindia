@@ -1,8 +1,8 @@
 {
-  "name": "pages",
+  "name": "princeofindia",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "webpack.common.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node server/dev-server.js",
@@ -16,9 +16,17 @@
   "browserslist": [
     "defaults"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MakingStuffs/princeofindia.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MakingStuffs/princeofindia/issues"
+  },
+  "homepage": "https://github.com/MakingStuffs/princeofindia#readme",
   "devDependencies": {
     "@babel/core": "^7.7.7",
     "@babel/plugin-transform-runtime": "^7.8.3",
