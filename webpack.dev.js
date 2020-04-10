@@ -127,7 +127,7 @@ module.exports = merge(common, {
     plugins: [
         new BrowserSyncPlugin({
             files: '**/*.ejs',
-            proxy: `http://localhost:${process.env.PORT}`
+            proxy: `https://localhost:${process.env.PORT}`
         }),
         new HtmlWebpackPlugin({
             template: '!!ejs-webpack-loader!./src/views/pages/index.ejs',
