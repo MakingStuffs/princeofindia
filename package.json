@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node server/dev-server.js",
-    "auth": "node server/auth-server.js"
+    "mail": "node server/mail-server.js",
+    "curlPass": "curl -k -H  \"Content-Type: application/json\" -X POST -d '{\"firstName\": \"Paul\", \"lastName\": \"Singh\", \"email\": \"anemail@gmail.com\", \"phone\": \"07121212121\", \"date\": \"04/30/2020\", \"time\":\"12:30\", \"headCount\": \"4\", \"captchaCheck\": { \"index\": 4, \"letter\": \"h\", \"field\": \"lastName\" }, \"captcha\": \"h\"}' https://localhost:5000/send-booking",
+    "curlFail": "curl -k -H  \"Content-Type: application/json\" -X POST -d '{\"firstName\": \"P@ul\", \"lastName\": \"$ingh\", \"email\": \"anemail[at]gmail.com\", \"phone\": \"+171212333312121\", \"date\": \"02/20/2010\", \"time\":\"25:30\", \"headCount\": \"A\", \"captchaCheck\": { \"index\": 4, \"letter\": \"h\", \"field\": \"lastName\" }, \"captcha\": \"h\"}' https://localhost:5000/send-booking"
   },
   "postcss": {
     "plugins": {
@@ -46,14 +48,17 @@
     "eslint": "^6.8.0",
     "eslint-loader": "^3.0.3",
     "express": "^4.17.1",
+    "express-async-await": "^1.1.0",
     "express-validator": "^6.3.1",
     "extract-css-chunks-webpack-plugin": "^4.7.1",
     "file-loader": "^5.0.2",
     "fs": "0.0.1-security",
+    "hcaptcha": "0.0.1",
     "helmet": "^3.21.2",
     "html-webpack-plugin": "^3.2.0",
     "https": "^1.0.0",
     "making-stuffs-queries": "^1.1.13",
+    "node-fetch": "^2.6.0",
     "node-sass": "^4.13.1",
     "nodemailer": "^6.4.2",
     "postcss-loader": "^3.0.0",
